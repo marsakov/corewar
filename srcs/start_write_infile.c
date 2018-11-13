@@ -64,8 +64,6 @@ t_cmd	*find_label(t_cmd *t, char *label)
 void	find_this_label(t_c *p, t_cmd *t, t_args *ar)
 {
 	t_cmd			*temp;
-	unsigned int	res;
-	t_label			*tl;
 
 	if (!(temp = find_label(p->cmd_p, ar->label)))
 	{
@@ -94,9 +92,12 @@ void	find_label_instruct(t_c *p)
 	{
 		argum = temp->args;
 		while (argum)
-		{
-			if (argum->label)
-				find_this_label(p, temp, argum);
+        {
+			if (argum->label) {
+
+			    ft_printf("%s\n", g_optab[temp->number].c_name);
+                find_this_label(p, temp, argum);
+            }
 			argum = argum->next;
 		}
 		temp = temp->next;

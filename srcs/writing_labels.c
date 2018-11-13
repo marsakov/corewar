@@ -64,7 +64,7 @@ void	check_label(t_c *p, t_cmd *c, int i)
 		c->label = p->tmp;
 		p->tmp = NULL;
 	}
-	c->number = i - 1;
+	c->number = i;
 	calc_codage(p, c);
 	validate_command(p, c, -1, k);
 }
