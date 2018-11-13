@@ -28,7 +28,19 @@ fcntl.h
 stdarg.h
 -
 
+/Users/msakovyc/asm/srcs/core_first.c
+../inc/core.h
+/Users/msakovyc/asm/inc/core.h
+
 /Users/msakovyc/asm/srcs/start_reading.c
+../inc/core.h
+/Users/msakovyc/asm/inc/core.h
+
+/Users/msakovyc/asm/srcs/start_write_infile.c
+../inc/core.h
+/Users/msakovyc/asm/inc/core.h
+
+/Users/msakovyc/asm/srcs/writing_labels.c
 ../inc/core.h
 /Users/msakovyc/asm/inc/core.h
 

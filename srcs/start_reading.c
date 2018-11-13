@@ -56,6 +56,8 @@ void	reading_map(t_c *p, int i, t_cmd *c)
 		}
 		if (ft_strstr(p->line, g_optab[i].c_name))
 		{
+			if (ft_strstr(p->line, g_optab[i + 1].c_name))
+				i++;
 			if ((is_command_nolabel(p, i, 0)))
 			{
 				read_command(p, g_optab[i].op_code, 0, c);
