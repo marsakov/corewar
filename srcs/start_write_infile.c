@@ -76,7 +76,10 @@ void	find_this_label(t_c *p, t_cmd *t, t_args *ar)
 			return ;
 		}
 		else
+		{
+			printf("label = %s | cmd->number = %d\n", ar->label, t->number);
 			error(15);
+		}
 	}
 	ar->ar_n = temp->size_before - t->size_before;
 //	printf("label = %s. temp->number = %d temp->size_before = %d this->size_before = %d\n", ar->label,temp->number, temp->size_before, t->size_before);

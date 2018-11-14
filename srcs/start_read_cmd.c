@@ -104,11 +104,9 @@ int		check_point(t_c *p, int k, int c)
 
 	while (p->line[k] != '.')
 		k++;
-	if (!(ptr = ft_strchr(p->line, '#')))
+	if (!ft_strchr(p->line, '#') && !ft_strchr(p->line, ';'))
 		return (0);
-	if (!(ptr2 = ft_strchr(p->line, ';')))
-		return (0);
-	while (p->line[c] != '#' || p->line[c] != ';')
+	while (p->line[c] != '#' && p->line[c] != ';')
 		c++;
 	if (k < c)
 		return (0);

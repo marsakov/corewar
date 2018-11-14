@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/vovan.iml" filepath="$PROJECT_DIR$/.idea/vovan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/core_together.iml" filepath="$PROJECT_DIR$/.idea/core_together.iml" />
     </modules>
   </component>
 </project>

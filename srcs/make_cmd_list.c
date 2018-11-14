@@ -51,6 +51,7 @@ void	write_one_arg(char *ptr, t_cmd *c)
 		if (!g_optab[c->number].args.arg1[0])
 			error(12);
 		arg->ar_n = ft_atoi(ptr + 1);
+		arg->label = NULL;
 		arg->size = 1;
 	}
 	else if (*ptr == '%' || *ptr == ':')
@@ -99,7 +100,10 @@ void	write_label_str(t_c *p, t_cmd *c, t_label *new, int i)
 		if (ft_isalnum(p->line[i]) || p->line[i] == '_')
 			new->label[j] = p->line[i];
 		else
+		{
+			printf("%s\n", p->line);
 			error(10);
+		}
 		i++;
 		j++;
 	}

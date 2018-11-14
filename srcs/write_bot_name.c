@@ -66,6 +66,7 @@ void	write_name_cont(t_c *p, int i, int count, int tmp)
 	j = 0;
 	while (p->file[i] != '\"')
 		i++;
+	tmp = i;
 	while (p->file[++tmp] != '\"')
 		count++;
 	if (count > 128)

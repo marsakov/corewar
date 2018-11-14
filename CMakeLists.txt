@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.12)
-project(vovan)
+project(core_together)
 
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(inc)
 include_directories(libft/includes)
 
-add_executable(vovan
+add_executable(core_together
         inc/core.h
         inc/op.h
         libft/includes/libft.h
@@ -97,95 +97,4 @@ add_executable(vovan
         srcs/write_bot_name.c
         srcs/write_couple_arg.c
         srcs/writing_labels.c
-        vm_champs/champs/championships/2014/bguy/sam_2.0.s
-        vm_champs/champs/championships/2014/bjacob/doge.s
-        vm_champs/champs/championships/2014/brandazz/Rainbow_dash.s
-        vm_champs/champs/championships/2014/cdivry/youforkmytralala.s
-        vm_champs/champs/championships/2014/clafleur/big_feet.s
-        vm_champs/champs/championships/2014/dcohen/loose.s
-        vm_champs/champs/championships/2014/ekocevar/mandragore.s
-        vm_champs/champs/championships/2014/esusseli/gedeon.s
-        vm_champs/champs/championships/2014/evlasova/terminator.s
-        vm_champs/champs/championships/2014/fcorre/ultimate-surrender.s
-        vm_champs/champs/championships/2014/gbir/_.s
-        vm_champs/champs/championships/2014/gjestin/salamahenagalabadoun.s
-        vm_champs/champs/championships/2014/gleger/Machine-gun.s
-        vm_champs/champs/championships/2014/gmange/corelol.s
-        vm_champs/champs/championships/2014/gpetrov/MarineKing.s
-        vm_champs/champs/championships/2014/gudepard/Kappa.s
-        vm_champs/champs/championships/2014/hmichals/Wall.s
-        vm_champs/champs/championships/2014/hmoutaou/Misaka_Mikoto.s
-        vm_champs/champs/championships/2014/kelickel/Varimathras.s
-        vm_champs/champs/championships/2014/kmonrose/justin_bee.s
-        vm_champs/champs/championships/2014/ldesgoui/_honeybadger.s
-        vm_champs/champs/championships/2014/lseguin/skynet.s
-        vm_champs/champs/championships/2014/lsirigna/live.s
-        vm_champs/champs/championships/2014/mbacoux/meowluigi.s
-        vm_champs/champs/championships/2014/mconraux/dubo.s
-        vm_champs/champs/championships/2014/rabid-on/jinx.s
-        vm_champs/champs/championships/2014/rmasse/THUNDER.s
-        vm_champs/champs/championships/2014/sbuono/Asombra.s
-        vm_champs/champs/championships/2014/srabah-m/littlepuppy.s
-        vm_champs/champs/championships/2014/tdemay/champ.s
-        vm_champs/champs/championships/2014/vrey/darksasuke.s
-        vm_champs/champs/championships/2014/ybouvet/casimir.s
-        vm_champs/champs/championships/2014/results.txt
-        vm_champs/champs/championships/2017/adenis/Explosive_Kitty.s
-        vm_champs/champs/championships/2017/agregoir/Kittystrophic.s
-        vm_champs/champs/championships/2017/gnebie/ultima.s
-        vm_champs/champs/championships/2017/iburel/gateau.s
-        vm_champs/champs/championships/2017/jaustry/mise_a_jour_windows95.s
-        vm_champs/champs/championships/2017/nolivier/run_Kitty_RUN.s
-        vm_champs/champs/championships/2017/pzarmehr/overwatch.s
-        vm_champs/champs/championships/2017/tbillard/Douceur_power.s
-        vm_champs/champs/examples/bee_gees.cor
-        vm_champs/champs/examples/bee_gees.s
-        vm_champs/champs/examples/bigzork.cor
-        vm_champs/champs/examples/bigzork.s
-        vm_champs/champs/examples/fluttershy.cor
-        vm_champs/champs/examples/fluttershy.s
-        vm_champs/champs/examples/helltrain.cor
-        vm_champs/champs/examples/helltrain.s
-        vm_champs/champs/examples/turtle.cor
-        vm_champs/champs/examples/turtle.s
-        vm_champs/champs/examples/zork.cor
-        vm_champs/champs/examples/zork.s
-        vm_champs/champs/42.cor
-        vm_champs/champs/42.s
-        vm_champs/champs/Backward.s
-        vm_champs/champs/barriere.cor
-        vm_champs/champs/barriere.s
-        vm_champs/champs/Car.cor
-        vm_champs/champs/Car.s
-        vm_champs/champs/Death.s
-        vm_champs/champs/ex.cor
-        vm_champs/champs/ex.s
-        vm_champs/champs/Gagnant.s
-        vm_champs/champs/jumper.cor
-        vm_champs/champs/jumper.s
-        vm_champs/champs/lde.s
-        vm_champs/champs/leeloo.s
-        vm_champs/champs/mat.s
-        vm_champs/champs/maxidef.cor
-        vm_champs/champs/maxidef.s
-        vm_champs/champs/mortel.cor
-        vm_champs/champs/mortel.s
-        vm_champs/champs/new.s
-        vm_champs/champs/Octobre_Rouge_V4.2.cor
-        vm_champs/champs/Octobre_Rouge_V4.2.s
-        vm_champs/champs/sebc.s
-        vm_champs/champs/slider2.cor
-        vm_champs/champs/slider2.s
-        vm_champs/champs/Survivor.s
-        vm_champs/champs/tdc2.s
-        vm_champs/champs/tdc3.s
-        vm_champs/champs/tdc4.s
-        vm_champs/champs/Torpille.s
-        vm_champs/champs/toto.cor
-        vm_champs/champs/toto.s
-        vm_champs/champs/V3M.cor
-        vm_champs/champs/V3M.s
-        vm_champs/champs/V3M2.cor
-        vm_champs/champs/V3M2.s
-        vm_champs/asm
-        vm_champs/corewar)
+        ultima.s)
