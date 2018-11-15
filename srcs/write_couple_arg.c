@@ -24,7 +24,7 @@ void	write_arg_label1(char *s, t_cmd *c, t_args *t, int i) {
 		error(12);
 	while (ft_isalnum(s[j]) || s[j] == '_')
 		j++;
-	t->label = (char *) malloc(sizeof(char) * j);
+	t->label = (char *) malloc(sizeof(char) * (j + 1));
 	while (s[j] && s[j] != '#' && s[j] != ';') {
 		if (s[j] != ' ' && s[j] != '\t')
 			error(13);

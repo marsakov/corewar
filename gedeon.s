@@ -9,7 +9,7 @@ tmp:
 	sti		r1, %:core, %25
 	sti		r1, %:live1, %1
 	sti		r1, %:live2, %1
-	sti		r1, %:youshallnotpass2, %1
+	# sti		r1, %:youshallnotpass3, %1
 	ld		%0, r1
 	fork	%:core
 
@@ -57,7 +57,9 @@ core:
 	fork	%:live1
 	live	%1337
 	fork	%:core
-	#ld		%0, r1
+	fork	%:youshallnotpass2
+	fork	%:youshallnotpass3
+	ld		%0, r1
 	zjmp	%:core
 
 live1:
@@ -73,7 +75,27 @@ youshallnotpass2:
 	live	%1337
 	st		r1, 30
 	st		r1, 29
+	fork	%:youshallnotpass4
 	st		r1, 28
 	st		r1, 27
 	ld		%0, r1
 	zjmp	%:youshallnotpass2
+
+youshallnotpass3:
+	live	%1337
+	st		r1, 30
+	st		r1, 29
+	st		r1, 28
+	st		r1, 27
+	ld		%0, r1
+	zjmp	%:youshallnotpass3
+
+youshallnotpass4:
+	live	%1337
+	st		r1, 30
+	st		r1, 29
+	st		r1, 28
+	fork	%:youshallnotpass3
+	st		r1, 27
+	ld		%0, r1
+	zjmp	%:youshallnotpass4

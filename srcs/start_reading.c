@@ -127,6 +127,21 @@ void	start_reading(t_c *p, char *str)
 			free(p->line);
 		}
 	}
+	t_cmd			*temp;
+	t_label			*tl;
+
+	temp = p->cmd_p;
+	printf("LABEL\n");
+	while (temp)
+	{
+		tl = temp->label;
+		while (tl)
+		{
+			printf("%s\n", tl->label);
+			tl = tl->next;
+		}
+		temp = temp->next;
+	}
 	new_function(p);
 }
 
