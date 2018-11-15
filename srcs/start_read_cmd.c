@@ -118,7 +118,6 @@ void	read_command(t_c *p, int i, int k, t_cmd *cmd)
 {
 	if (!p->cmd_p)
 	{
-		printf("dkj\n");
 		cmd = (t_cmd *)malloc(sizeof(t_cmd));
 		cmd->cmd_s = -42;
 		cmd->next = NULL;

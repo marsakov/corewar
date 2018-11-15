@@ -96,6 +96,7 @@ void	new_function(t_c *p)
 	{
 		point->size_before = temp;
 		temp += point->cmd_s;
+		printf("number = %d | size = %d | size_before = %d\n",point->number, point->cmd_s, point->size_before);
 		point = point->next;
 	}
 	find_label_instruct(p);

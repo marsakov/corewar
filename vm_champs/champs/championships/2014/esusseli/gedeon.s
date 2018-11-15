@@ -57,7 +57,7 @@ core:
 	fork	%:live1
 	live	%1337
 	fork	%:core
-	#ld		%0, r1
+	ld		%0, r1
 	zjmp	%:core
 
 live1:

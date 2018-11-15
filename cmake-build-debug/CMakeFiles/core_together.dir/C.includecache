@@ -28,7 +28,23 @@ fcntl.h
 stdarg.h
 -
 
+/Users/msakovyc/Downloads/core_together/srcs/start_read_cmd.c
+../inc/core.h
+/Users/msakovyc/Downloads/core_together/inc/core.h
+
+/Users/msakovyc/Downloads/core_together/srcs/start_reading.c
+../inc/core.h
+/Users/msakovyc/Downloads/core_together/inc/core.h
+
 /Users/msakovyc/Downloads/core_together/srcs/start_write_infile.c
+../inc/core.h
+/Users/msakovyc/Downloads/core_together/inc/core.h
+
+/Users/msakovyc/Downloads/core_together/srcs/write_couple_arg.c
+../inc/core.h
+/Users/msakovyc/Downloads/core_together/inc/core.h
+
+/Users/msakovyc/Downloads/core_together/srcs/writing_labels.c
 ../inc/core.h
 /Users/msakovyc/Downloads/core_together/inc/core.h
 
