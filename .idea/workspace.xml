@@ -14,17 +14,17 @@
     <list default="true" id="22a57abc-5d2f-46fa-b38b-1386144829a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/big_feet.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/start_reading.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/start_reading.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/finish_validation.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/finish_validation.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/start_read_cmd.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/start_read_cmd.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/start_write_infile.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/start_write_infile.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/write_couple_arg.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/write_couple_arg.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/writing_labels.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/core_together.dir/srcs/writing_labels.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/core_together" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/core_together" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gedeon.cor" beforeDir="false" afterPath="$PROJECT_DIR$/gedeon.cor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gedeon.s" beforeDir="false" afterPath="$PROJECT_DIR$/gedeon.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loose.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mandragore.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/start_read_cmd.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/start_read_cmd.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/start_write_infile.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/start_write_infile.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vm_champs/champs/championships/2014/esusseli/gedeon.s" beforeDir="false" afterPath="$PROJECT_DIR$/vm_champs/champs/championships/2014/esusseli/gedeon.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terminator.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/youforkmytralala.s" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,26 +87,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="c" value="67" />
+          <entry key="c" value="95" />
           <entry key="m" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="90" />
+          <entry key="ObjectiveC" value="118" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.27214515">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/srcs/write_couple_arg.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-52">
-                  <caret line="64" column="22" lean-forward="true" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+                <state relative-caret-position="290">
+                  <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -142,7 +142,7 @@
             <entry file="file://$PROJECT_DIR$/srcs/make_cmd_list.c">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="202">
-                  <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+                  <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -179,8 +179,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/srcs/start_read_cmd.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="97">
-                  <caret line="56" selection-start-line="56" selection-end-line="56" />
+                <state relative-caret-position="713">
+                  <caret line="62" column="129" selection-start-line="62" selection-start-column="129" selection-end-line="62" selection-end-column="129" />
                 </state>
               </provider>
             </entry>
@@ -205,9 +205,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/srcs/make_cmd_list.c" />
-        <option value="$PROJECT_DIR$/srcs/start_read_cmd.c" />
         <option value="$PROJECT_DIR$/srcs/start_reading.c" />
         <option value="$PROJECT_DIR$/srcs/write_couple_arg.c" />
+        <option value="$PROJECT_DIR$/srcs/start_read_cmd.c" />
       </list>
     </option>
   </component>
@@ -217,7 +217,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="2560" />
     <option name="height" value="1440" />
   </component>
@@ -268,7 +268,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="corewar" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="gedeon.s" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="core_together" TARGET_NAME="core_together" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="core_together" RUN_TARGET_NAME="core_together">
+    <configuration name="corewar" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="ultimate-surrender.s" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="core_together" TARGET_NAME="core_together" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="core_together" RUN_TARGET_NAME="core_together">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -291,15 +291,16 @@
       <workItem from="1542121174099" duration="5394000" />
       <workItem from="1542206126940" duration="10000" />
       <workItem from="1542206155047" duration="3574000" />
-      <workItem from="1542275317313" duration="1614000" />
+      <workItem from="1542275317313" duration="2811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10592000" />
+    <option name="totallyTimeSpent" value="11789000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1333" extended-state="6" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25575852" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -307,12 +308,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32919708" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3626108" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.32846716" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32876712" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32846716" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32931727" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
@@ -333,11 +334,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/srcs/start_reading.c</url>
-          <line>115</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/start_write_infile.c</url>
           <line>67</line>
           <option name="timeStamp" value="17" />
@@ -349,13 +345,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/start_read_cmd.c</url>
-          <line>45</line>
-          <option name="timeStamp" value="19" />
+          <line>46</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/start_read_cmd.c</url>
-          <line>50</line>
-          <option name="timeStamp" value="20" />
+          <line>67</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -445,14 +441,14 @@
     <entry file="file://$PROJECT_DIR$/srcs/make_cmd_list.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
-          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/srcs/write_couple_arg.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="64" column="22" lean-forward="true" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+        <state relative-caret-position="290">
+          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -465,8 +461,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/srcs/start_read_cmd.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="713">
+          <caret line="62" column="129" selection-start-line="62" selection-start-column="129" selection-end-line="62" selection-end-column="129" />
         </state>
       </provider>
     </entry>

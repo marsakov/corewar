@@ -60,7 +60,7 @@ void	calc_codage(t_c *p, t_cmd *c)
 				i--;
 			i--;
 		}
-		else if (ft_isdigit(p->line[i]) && (!ft_isalpha(p->line[i - 1]) || p->line[i - 1] == 'r'))
+		else if (ft_isdigit(p->line[i]) && (!ft_isalpha(p->line[i - 1]) || p->line[i - 1] == 'r') && !ft_isalnum(p->line[i - 2]))
 			while (ft_isdigit(p->line[i]) || p->line[i] == '-')
 				i--;
 		calc_codage_2(p, c, &i);
