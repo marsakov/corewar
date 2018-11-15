@@ -129,6 +129,7 @@ int					if_not_cmd(char *ptr, t_c *p, int i, int k);
 /*
 ** binary
 */
+void				split_del(char **string);
 int					comma_existing(t_c *p, int i);
 int					file_creator(t_c *file);
 void				writting_coomand(t_c *file, int fd);

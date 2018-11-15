@@ -82,10 +82,7 @@ void	validate_command(t_c *p, t_cmd *c, int j, int k)
 		ptr++;
 	string = ft_strsplit(ptr, ',');
 	start_search_signs(p, string, i, c);
-	i = -1;
-	while (string[++i])
-		if (string[i])
-			free(string[i]);
+	split_del(string);
 }
 
 void	write_label_str(t_c *p, t_cmd *c, t_label *new, int i)

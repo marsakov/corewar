@@ -12,6 +12,17 @@
 
 #include "../inc/core.h"
 
+void	split_del(char **string)
+{
+	int i;
+	
+	i = -1;
+	while (string[++i])
+		if (string[i])
+			free(string[i]);
+	free(string);
+}
+
 int		comma_existing(t_c *p, int i)
 {
 	while (p->line[i])
@@ -47,6 +58,7 @@ void	reverse(int fd, unsigned char *n, int count)
 void	writting_coomand(t_c *file, int fd)
 {
 	t_cmd	*lst;
+	t_args	*arg_tmp;
 
 	lst = file->cmd_p;
 	while (lst)
@@ -56,11 +68,12 @@ void	writting_coomand(t_c *file, int fd)
 		if (lst->number != 1 && lst->number != 9
 			&& lst->number != 12 && lst->number != 15)
 			reverse(fd, (unsigned char*)&lst->codage, 1);
-		while (lst->args)
+		arg_tmp = lst->args;
+		while (arg_tmp)
 		{
-			if (lst->args->size)
-				reverse(fd, (unsigned char*)&lst->args->ar_n, lst->args->size);
-			lst->args = lst->args->next;
+			if (arg_tmp->size)
+				reverse(fd, (unsigned char*)&arg_tmp->ar_n, arg_tmp->size);
+			arg_tmp = arg_tmp->next;
 		}
 		lst = lst->next;
 	}
@@ -87,7 +100,7 @@ int		file_creator(t_c *file)
 	write(fd, &magic, 4);
 	reverse(fd, (unsigned char*)&file->size, 4);
 	write(fd, &file->comment, COMMENT_LENGTH);
-	write(fd, &magic, 4);
+	write(fd, &magic, 4);;
 	writting_coomand(file, fd);
 	close(fd);
 	return (1);

@@ -22,7 +22,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/core_together" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/core_together" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loose.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mandragore.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/start_read_cmd.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/start_read_cmd.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terminator.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/youforkmytralala.s" beforeDir="false" />
     </list>
@@ -105,8 +104,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/srcs/write_couple_arg.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="290">
-                  <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+                <state relative-caret-position="320">
+                  <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -179,8 +178,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/srcs/start_read_cmd.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="713">
-                  <caret line="62" column="129" selection-start-line="62" selection-start-column="129" selection-end-line="62" selection-end-column="129" />
+                <state relative-caret-position="668">
+                  <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -291,12 +290,12 @@
       <workItem from="1542121174099" duration="5394000" />
       <workItem from="1542206126940" duration="10000" />
       <workItem from="1542206155047" duration="3574000" />
-      <workItem from="1542275317313" duration="2811000" />
+      <workItem from="1542275317313" duration="3058000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11789000" />
+    <option name="totallyTimeSpent" value="12036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -345,12 +344,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/start_read_cmd.c</url>
-          <line>46</line>
+          <line>43</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/start_read_cmd.c</url>
-          <line>67</line>
+          <line>65</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
@@ -447,8 +446,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/srcs/write_couple_arg.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+        <state relative-caret-position="320">
+          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -461,8 +460,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/srcs/start_read_cmd.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="62" column="129" selection-start-line="62" selection-start-column="129" selection-end-line="62" selection-end-column="129" />
+        <state relative-caret-position="668">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
         </state>
       </provider>
     </entry>

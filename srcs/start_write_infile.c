@@ -93,7 +93,11 @@ void	find_label_instruct(t_c *p)
 		while (argum)
 		{
 			if (argum->label)
+			{
 				find_this_label(p, temp, argum);
+				free(argum->label);
+				argum->label = NULL;
+			}
 			argum = argum->next;
 		}
 		temp = temp->next;
