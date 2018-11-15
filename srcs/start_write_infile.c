@@ -76,13 +76,9 @@ void	find_this_label(t_c *p, t_cmd *t, t_args *ar)
 			return ;
 		}
 		else
-		{
-			printf("label = %s | cmd->number = %d\n", ar->label, t->number);
 			error(15);
-		}
 	}
 	ar->ar_n = temp->size_before - t->size_before;
-	printf("label = %s. temp->number = %d t->cmd_s = %d temp->size_before = %d this->size_before = %d | ar->ar_n = %d\n", ar->label,temp->number,t->cmd_s, temp->size_before, t->size_before, ar->ar_n);
 }
 
 void	find_label_instruct(t_c *p)
@@ -95,12 +91,9 @@ void	find_label_instruct(t_c *p)
 	{
 		argum = temp->args;
 		while (argum)
-        {
-			if (argum->label) {
-
-			    ft_printf("%s\n", g_optab[temp->number].c_name);
-                find_this_label(p, temp, argum);
-            }
+		{
+			if (argum->label)
+				find_this_label(p, temp, argum);
 			argum = argum->next;
 		}
 		temp = temp->next;

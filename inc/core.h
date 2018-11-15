@@ -40,7 +40,7 @@ typedef struct		s_cmd
 	t_label			*label;
 	t_args			*args;
 	int				cmd_s;
-	unsigned int 	size_before;
+	unsigned int	size_before;
 	unsigned char	codage;
 	int				char_c;
 	struct s_cmd	*next;
@@ -64,6 +64,8 @@ typedef struct		s_c
 	t_cmd			*cmd_p;
 }					t_c;
 
+void				put_zero(t_c *p);
+
 /*
 ** bot name
 */
@@ -83,7 +85,7 @@ int					empty_string(t_c *p, int i);
 int					check_point(t_c *p, int k, int c);
 void				read_command(t_c *p, int i, int k, t_cmd *cmd);
 int					is_command_nolabel(t_c *ps, int i, int k);
-void				calc_codage(t_c *p, t_cmd *c);
+void				calc_codage(t_c *p, t_cmd *c, int i);
 
 /*
 ** writing labels
@@ -98,7 +100,7 @@ t_cmd				*make_new_cmd(t_c *p);
 */
 void				write_label(t_c *p, t_cmd *c);
 void				validate_command(t_c *p, t_cmd *c, int j, int k);
-void				write_one_arg(char *ptr, t_cmd *c);
+void				write_one_arg(char *ptr, t_cmd *c, t_args *arg);
 
 /*
 ** write couple arg

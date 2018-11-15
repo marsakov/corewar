@@ -61,13 +61,11 @@ void	check_label(t_c *p, t_cmd *c, int i)
 	}
 	if (p->tmp)
 	{
-		printf("P->LINE = %s\n", p->line);
 		c->label = p->tmp;
 		p->tmp = NULL;
-		printf("LABEL = %s\n", c->label->label);
 	}
 	c->number = i;
-	calc_codage(p, c);
+	calc_codage(p, c, 0);
 	validate_command(p, c, -1, k);
 }
 

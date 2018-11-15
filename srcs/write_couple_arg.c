@@ -12,7 +12,8 @@
 
 #include "../inc/core.h"
 
-void	write_arg_label1(char *s, t_cmd *c, t_args *t, int i) {
+void	write_arg_label1(char *s, t_cmd *c, t_args *t, int i)
+{
 	int j;
 	int k;
 
@@ -24,8 +25,9 @@ void	write_arg_label1(char *s, t_cmd *c, t_args *t, int i) {
 		error(12);
 	while (ft_isalnum(s[j]) || s[j] == '_')
 		j++;
-	t->label = (char *) malloc(sizeof(char) * (j + 1));
-	while (s[j] && s[j] != '#' && s[j] != ';') {
+	t->label = (char *)malloc(sizeof(char) * (j + 1));
+	while (s[j] && s[j] != '#' && s[j] != ';')
+	{
 		if (s[j] != ' ' && s[j] != '\t')
 			error(13);
 		j++;
@@ -110,7 +112,7 @@ void	check_arg(char **string, int i, t_cmd *c, int k)
 
 void	start_search_signs(t_c *p, char **string, int i, t_cmd *c)
 {
-	int 	l;
+	int		l;
 	t_args	*temp;
 
 	while (string[i])
@@ -127,10 +129,7 @@ void	start_search_signs(t_c *p, char **string, int i, t_cmd *c)
 			|| string[i][l] == ':')
 			check_arg(string, i, c, 3);
 		else
-		{
-			ft_printf("%s\n", string[i]);
 			error(11);
-		}
 		i++;
 	}
 	temp = c->args;

@@ -28,17 +28,15 @@ void	one_arg_ind(t_args *arg, t_cmd *c, char *p)
 		write_arg_label1(p + 2, c, arg, 0);
 }
 
-void	write_one_arg(char *ptr, t_cmd *c)
+void	write_one_arg(char *ptr, t_cmd *c, t_args *arg)
 {
-	t_args *arg;
-
 	arg = (t_args *)malloc(sizeof(t_args));
 	arg->number = 1;
 	arg->next = NULL;
 	c->args = arg;
 	ptr = ptr + ft_strlen(g_optab[c->number].c_name);
 	while (*ptr == ' ' || *ptr == '\t')
-	 	ptr++;
+		ptr++;
 	if (*ptr == '-' || ft_isdigit(*ptr))
 	{
 		if (!g_optab[c->number].args.arg1[1])
@@ -75,15 +73,19 @@ void	validate_command(t_c *p, t_cmd *c, int j, int k)
 	}
 	if (!comma_existing(p, 0))
 	{
-		write_one_arg(ptr, c);
+		write_one_arg(ptr, c, NULL);
 		return ;
 	}
 	count_comma(p, j);
 	ptr = ptr + ft_strlen(g_optab[c->number].c_name);
 	while (*ptr == ' ' || *ptr == '\t')
-	 	ptr++;
+		ptr++;
 	string = ft_strsplit(ptr, ',');
 	start_search_signs(p, string, i, c);
+	i = -1;
+	while (string[++i])
+		if (string[i])
+			free(string[i]);
 }
 
 void	write_label_str(t_c *p, t_cmd *c, t_label *new, int i)
@@ -100,10 +102,7 @@ void	write_label_str(t_c *p, t_cmd *c, t_label *new, int i)
 		if (ft_isalnum(p->line[i]) || p->line[i] == '_')
 			new->label[j] = p->line[i];
 		else
-		{
-			printf("%s\n", p->line);
 			error(10);
-		}
 		i++;
 		j++;
 	}

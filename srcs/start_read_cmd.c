@@ -39,11 +39,8 @@ void	calc_codage_2(t_c *p, t_cmd *c, int *i)
 	}
 }
 
-void	calc_codage(t_c *p, t_cmd *c)
+void	calc_codage(t_c *p, t_cmd *c, int i)
 {
-	int i;
-
-	i = 0;
 	c->codage = 0;
 	c->cmd_s = 1;
 	while (p->line[i] && p->line[i] != '#' && p->line[i] != ';')
@@ -60,7 +57,8 @@ void	calc_codage(t_c *p, t_cmd *c)
 				i--;
 			i--;
 		}
-		else if (ft_isdigit(p->line[i]) && (!ft_isalpha(p->line[i - 1]) || p->line[i - 1] == 'r') && !ft_isalnum(p->line[i - 2]))
+		else if (ft_isdigit(p->line[i]) && (!ft_isalpha(p->line[i - 1])
+			|| p->line[i - 1] == 'r') && !ft_isalnum(p->line[i - 2]))
 			while (ft_isdigit(p->line[i]) || p->line[i] == '-')
 				i--;
 		calc_codage_2(p, c, &i);
@@ -87,7 +85,7 @@ int		is_command_nolabel(t_c *p, int i, int k)
 		&& *(ptr + ft_strlen(g_optab[i].c_name)) != 'r')
 		return (0);
 	ptr = ptr + ft_strlen(g_optab[i].c_name);
-	while (ptr[++k] )
+	while (ptr[++k])
 	{
 		if (ptr[k] == '\0' || ptr[k] == ',')
 			return (0);
@@ -99,9 +97,6 @@ int		is_command_nolabel(t_c *p, int i, int k)
 
 int		check_point(t_c *p, int k, int c)
 {
-	char *ptr;
-	char *ptr2;
-
 	while (p->line[k] != '.')
 		k++;
 	if (!ft_strchr(p->line, '#') && !ft_strchr(p->line, ';'))

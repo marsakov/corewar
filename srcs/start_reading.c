@@ -30,7 +30,10 @@ void	check_if_finish(t_c *p)
 		while (get_next_line(p->fd, &(p->line)))
 		{
 			if ((p->c = ft_strchr(p->line, '\"')))
+			{
+				free(p->line);
 				break ;
+			}
 			free(p->line);
 		}
 	}
@@ -38,19 +41,16 @@ void	check_if_finish(t_c *p)
 
 void	reading_map(t_c *p, int i, t_cmd *c)
 {
-	char	*ptr;
-	char	*p2;
-
-	if ((ptr = ft_strchr(p->line, '.')))
+	if (ft_strchr(p->line, '.'))
 		if (!check_point(p, 0, 0))
 			error(7);
 	i = 16;
 	while (--i >= -1)
 	{
 		p->checker2 = 0;
-		if (i == -1 && !(p2 = ft_strchr(p->line, ':')))
+		if (i == -1 && !ft_strchr(p->line, ':'))
 			error(6);
-		if (i == -1 && (p2 = ft_strchr(p->line, ':')))
+		if (i == -1 && ft_strchr(p->line, ':'))
 		{
 			start_label(p, 0);
 			break ;
@@ -85,22 +85,6 @@ int		empty_string(t_c *p, int i)
 		return (0);
 }
 
-void	put_zero(t_c *p)
-{
-	int i;
-
-	i = 0;
-	while (p->line[i])
-	{
-		if ((p->line[i] == '#') || (p->line[i] == ';'))
-		{
-			p->line[i] = '\0';
-			break ;
-		}
-		i++;
-	}
-}
-
 void	start_reading(t_c *p, char *str)
 {
 	t_cmd	*cmd;
@@ -111,7 +95,6 @@ void	start_reading(t_c *p, char *str)
 		error(1);
 	while (get_next_line(p->fd, &(p->line)) > 0)
 	{
-		printf("line = %s\n", p->line);
 		if (p->line[0] == '#' || strstr(p->line, ".name"))
 			free(p->line);
 		else if (strstr(p->line, ".comment"))
@@ -126,21 +109,6 @@ void	start_reading(t_c *p, char *str)
 			reading_map(p, -1, cmd);
 			free(p->line);
 		}
-	}
-	t_cmd			*temp;
-	t_label			*tl;
-
-	temp = p->cmd_p;
-	printf("LABEL\n");
-	while (temp)
-	{
-		tl = temp->label;
-		while (tl)
-		{
-			printf("%s\n", tl->label);
-			tl = tl->next;
-		}
-		temp = temp->next;
 	}
 	new_function(p);
 }

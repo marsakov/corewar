@@ -53,10 +53,13 @@ void	writting_coomand(t_c *file, int fd)
 	{
 		lst->number++;
 		write(fd, &lst->number, 1);
-		(lst->number != 1 && lst->number != 9 && lst->number != 12 && lst->number != 15) ? reverse(fd, (unsigned char*)&lst->codage, 1) : 0;
+		if (lst->number != 1 && lst->number != 9
+			&& lst->number != 12 && lst->number != 15)
+			reverse(fd, (unsigned char*)&lst->codage, 1);
 		while (lst->args)
 		{
-			(lst->args->size) ? reverse(fd, (unsigned char*)&lst->args->ar_n, lst->args->size) : 0;
+			if (lst->args->size)
+				reverse(fd, (unsigned char*)&lst->args->ar_n, lst->args->size);
 			lst->args = lst->args->next;
 		}
 		lst = lst->next;
@@ -68,7 +71,7 @@ int		file_creator(t_c *file)
 	int				fd;
 	unsigned int	magic;
 	t_cmd			*lst_tmp;
-	
+
 	lst_tmp = file->cmd_p;
 	file->size = 0;
 	while (lst_tmp)

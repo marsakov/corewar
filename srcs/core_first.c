@@ -24,8 +24,8 @@ t_op	g_optab[17] =
 		"et (and  r1, r2, r3   r1&r2 -> r3", 1, 4},
 	{"or", 3, {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 4, 7, 6,
 		"ou  (or   r1, r2, r3   r1 | r2 -> r3", 1, 4},
-    {"xor", 3, {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 4, 8, 6,
-            "ou (xor  r1, r2, r3   r1^r2 -> r3", 1, 4},
+	{"xor", 3, {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 4, 8, 6,
+		"ou (xor  r1, r2, r3   r1^r2 -> r3", 1, 4},
 	{"zjmp", 1, {{0, 1, 1}, {0, 0, 0}, {0, 0, 0}}, 2, 9, 20,
 		"jump if zero", 0, 2},
 	{"ldi", 3, {{1, 1, 1}, {1, 1, 0}, {1, 0, 0}}, 2, 10, 25,
@@ -41,6 +41,22 @@ t_op	g_optab[17] =
 	{"aff", 1, {{1, 0, 0}, {0, 0, 0}, {0, 0, 0}}, 4, 16, 2, "aff", 1, 4},
 	{0, 0, {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}, 0, 0, 0, 0, 0, 0}
 };
+
+void	put_zero(t_c *p)
+{
+	int i;
+
+	i = 0;
+	while (p->line[i])
+	{
+		if ((p->line[i] == '#') || (p->line[i] == ';'))
+		{
+			p->line[i] = '\0';
+			break ;
+		}
+		i++;
+	}
+}
 
 void	get_file(t_c *p)
 {
@@ -106,5 +122,6 @@ int		main(int argc, char **argv)
 	else
 		ft_printf("%s\n", "Usage: ./asm <sourcefile.s>");
 	file_creator(ptr);
+	system("leaks asm");
 	return (0);
 }
