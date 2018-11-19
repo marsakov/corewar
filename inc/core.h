@@ -31,6 +31,7 @@ typedef struct		s_args
 	char			*label;
 	int				number;
 	int				size;
+	int				type;
 	struct s_args	*next;
 }					t_args;
 
@@ -69,14 +70,14 @@ void				put_zero(t_c *p);
 /*
 ** bot name
 */
-void				write_bot_name(t_c *p, int i);
+void				write_bot_name(t_c *p, int i, int count, int tmp);
 void				error(int i);
 
 /*
 ** start reading
 */
 int					is_comment(t_c *p, int i);
-void				start_reading(t_c *p, char *str);
+void				start_reading(t_c *p, char *str, t_cmd *cmd);
 int					empty_string(t_c *p, int i);
 
 /*
@@ -85,7 +86,7 @@ int					empty_string(t_c *p, int i);
 int					check_point(t_c *p, int k, int c);
 void				read_command(t_c *p, int i, int k, t_cmd *cmd);
 int					is_command_nolabel(t_c *ps, int i, int k);
-void				calc_codage(t_c *p, t_cmd *c, int i);
+void				calc_codage(t_c *p, t_cmd *c, int i, int j);
 
 /*
 ** writing labels
@@ -106,7 +107,7 @@ void				write_one_arg(char *ptr, t_cmd *c, t_args *arg);
 ** write couple arg
 */
 void				write_arg_label1(char *s, t_cmd *c, t_args *t, int i);
-void				start_search_signs(t_c *p, char **string, int i, t_cmd *c);
+void				start_search_signs(char **string, int i, t_cmd *c);
 
 /*
 ** finish validation
@@ -123,7 +124,7 @@ void				new_function(t_c *p);
 t_cmd				*find_label(t_cmd *t, char *label);
 void				find_this_label(t_c *p, t_cmd *t, t_args *ar);
 void				find_label_instruct(t_c *p);
-void				count_comma(t_c *p, int j);
+void				count_comma(t_c *p, int j, char *ptr);
 int					if_not_cmd(char *ptr, t_c *p, int i, int k);
 
 /*
@@ -134,5 +135,12 @@ int					comma_existing(t_c *p, int i);
 int					file_creator(t_c *file);
 void				writting_coomand(t_c *file, int fd);
 void				reverse(int fd, unsigned char *n, int count);
+
+/*
+** finis ^-^
+*/
+void				validate_name(t_c *p, int i);
+void				check_cm_instring(t_c *p, int i);
+int					count_commands(char *p);
 
 #endif

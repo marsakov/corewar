@@ -26,7 +26,7 @@ t_op	g_optab[17] =
 		"ou  (or   r1, r2, r3   r1 | r2 -> r3", 1, 4},
 	{"xor", 3, {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 4, 8, 6,
 		"ou (xor  r1, r2, r3   r1^r2 -> r3", 1, 4},
-	{"zjmp", 1, {{0, 1, 1}, {0, 0, 0}, {0, 0, 0}}, 2, 9, 20,
+	{"zjmp", 1, {{0, 1, 0}, {0, 0, 0}, {0, 0, 0}}, 2, 9, 20,
 		"jump if zero", 0, 2},
 	{"ldi", 3, {{1, 1, 1}, {1, 1, 0}, {1, 0, 0}}, 2, 10, 25,
 		"load index", 1, 2},
@@ -73,19 +73,21 @@ void	get_file(t_c *p)
 		free(temp);
 	}
 	close(p->fd);
-	write_bot_name(p, 0);
+	write_bot_name(p, 0, 0, 0);
 }
 
 void	check_file_name(char *str, t_c *p)
 {
-	char *tmp;
+	char	*tmp;
+	t_cmd	*cmd;
 
+	cmd = NULL;
 	p->f_name = NULL;
 	p->f_name = ft_strsub(str, 0, ft_strlen(str) - 2);
 	tmp = p->f_name;
 	p->f_name = ft_strjoin(p->f_name, ".cor");
 	free(tmp);
-	start_reading(p, str);
+	start_reading(p, str, cmd);
 }
 
 void	open_file(t_c *ptr, char *str)
@@ -111,17 +113,80 @@ void	open_file(t_c *ptr, char *str)
 		error(10);
 }
 
+void	flag_a(t_c *file)
+{
+	t_cmd	*lst;
+	t_args	*arg;
+	int		width;
+
+	lst = file->cmd_p;
+	while (lst)
+	{
+		if (lst->label)
+			ft_printf("%-11d:    %s:\n", lst->size_before, lst->label->label);
+		ft_printf("%-5d(%-3d) :        %-10s", lst->size_before, lst->cmd_s, g_optab[lst->number - 1].c_name);
+		arg = lst->args;
+		while (arg)
+		{
+			width = 18;
+			(arg->type == 1 && width--) ? ft_printf("r") : 0;
+			(arg->type == 2 && width--) ? ft_printf("%%") : 0;
+			if (arg->label)
+				ft_printf(":%-*s", --width, arg->label);
+			else
+				ft_printf("%-*d", width, arg->ar_n);
+			arg = arg->next;
+		}
+//-----------
+		ft_printf("\n                    %-4d", lst->number);
+		if (lst->codage)
+			ft_printf("%-6d", lst->codage);
+		else
+			ft_printf("\t  ", lst->codage);
+		arg = lst->args;
+		while (arg)
+		{
+			if (arg->type == 1)
+				ft_printf("%-18d", arg->ar_n);
+			else if (arg->type == 2 && arg->size == 4)
+				ft_printf("%-4d%-4d%-4d%-4d", arg->ar_n / 65536 / 256, arg->ar_n / 65536 % 256, arg->ar_n / 256 % 256, arg->ar_n % 256);
+			else if (arg->type == 3 || (arg->type == 2 && arg->size == 2))
+				ft_printf("%-4d%-14d", arg->ar_n / 256 % 256, arg->ar_n % 256);
+			else
+				ft_printf("ELSE type = %d", arg->type);
+			arg = arg->next;
+		}
+//------------
+		ft_printf("\n                    %-4d", lst->number);
+		if (lst->codage)
+			ft_printf("%-6d", lst->codage);
+		else
+			ft_printf("      ", lst->codage);
+		arg = lst->args;
+		while (arg)
+		{
+			ft_printf("%-18d", arg->ar_n);
+			arg = arg->next;
+		}
+		ft_printf("\n\n");
+		lst = lst->next;
+	}
+}
+
 int		main(int argc, char **argv)
 {
 	t_c *ptr;
 
 	ptr = (t_c *)malloc(sizeof(t_c));
 	ptr->flag = 0;
-	if (argc == 2)
-		open_file(ptr, argv[1]);
+	if (argc == 2 || (argc == 3 && (!ft_strcmp("-a", argv[1]) || !ft_strcmp("-a", argv[2]))))
+		open_file(ptr, (argc == 3 && !ft_strcmp("-a", argv[1])) ? argv[2] : argv[1]);
 	else
 		ft_printf("%s\n", "Usage: ./asm <sourcefile.s>");
 	file_creator(ptr);
+	if (argc == 3)
+		flag_a(ptr);
 	system("leaks asm");
 	return (0);
 }
+

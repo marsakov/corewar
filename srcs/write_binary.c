@@ -15,7 +15,7 @@
 void	split_del(char **string)
 {
 	int i;
-	
+
 	i = -1;
 	while (string[++i])
 		if (string[i])
@@ -100,7 +100,7 @@ int		file_creator(t_c *file)
 	write(fd, &magic, 4);
 	reverse(fd, (unsigned char*)&file->size, 4);
 	write(fd, &file->comment, COMMENT_LENGTH);
-	write(fd, &magic, 4);;
+	write(fd, &magic, 4);
 	writting_coomand(file, fd);
 	close(fd);
 	return (1);

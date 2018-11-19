@@ -12,13 +12,15 @@
 
 #include "../inc/core.h"
 
-void	check_if_finish(t_c *p)
+void	check_if_finish(t_c *p, int c)
 {
-	int i;
-	int c;
+	int			i;
+	static int	lm = 0;
 
 	i = -1;
-	c = 0;
+	lm++;
+	if (lm > 2)
+		error2(16);
 	while (p->line[++i])
 		if (p->line[i] == '\"')
 			c++;
@@ -85,20 +87,20 @@ int		empty_string(t_c *p, int i)
 		return (0);
 }
 
-void	start_reading(t_c *p, char *str)
+void	start_reading(t_c *p, char *str, t_cmd *cmd)
 {
-	t_cmd	*cmd;
-
-	cmd = NULL;
 	p->fd = open(str, O_RDONLY);
 	if (p->fd < 0)
 		error(1);
 	while (get_next_line(p->fd, &(p->line)) > 0)
 	{
-		if (p->line[0] == '#' || strstr(p->line, ".name"))
+		ft_printf("p->line = %s\n", p->line);
+		if (p->line[0] == '#')
 			free(p->line);
 		else if (strstr(p->line, ".comment"))
-			check_if_finish(p);
+			check_if_finish(p, 0);
+		else if (strstr(p->line, ".name"))
+			check_if_finish(p, 0);
 		else if (!ft_strcmp(p->line, ""))
 			free(p->line);
 		else if (empty_string(p, 0))

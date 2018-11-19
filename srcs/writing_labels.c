@@ -65,8 +65,9 @@ void	check_label(t_c *p, t_cmd *c, int i)
 		p->tmp = NULL;
 	}
 	c->number = i;
-	calc_codage(p, c, 0);
+	p->counter = 0;
 	validate_command(p, c, -1, k);
+	calc_codage(p, c, 0, 0);
 }
 
 int		is_str_label(t_c *p)

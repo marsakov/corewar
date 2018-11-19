@@ -19,7 +19,9 @@ void	one_arg_ind(t_args *arg, t_cmd *c, char *p)
 	else if (*(p + 1) != ':')
 	{
 		if (!g_optab[c->number].args.arg1[1])
-			error(12);
+			error2(12);
+		if (p[1] != '-' && !(ft_isalnum(p[1])))
+			error2(18);
 		arg->ar_n = ft_atoi(p + 1);
 		arg->size = g_optab[c->number].l_size;
 		arg->label = NULL;
@@ -39,21 +41,23 @@ void	write_one_arg(char *ptr, t_cmd *c, t_args *arg)
 		ptr++;
 	if (*ptr == '-' || ft_isdigit(*ptr))
 	{
-		if (!g_optab[c->number].args.arg1[1])
-			error(12);
+		if (!g_optab[c->number].args.arg1[2])
+			error2(12);
 		arg->ar_n = ft_atoi(ptr);
 		arg->size = 2;
 	}
 	else if (*ptr == 'r')
 	{
 		if (!g_optab[c->number].args.arg1[0])
-			error(12);
+			error2(12);
 		arg->ar_n = ft_atoi(ptr + 1);
 		arg->label = NULL;
 		arg->size = 1;
 	}
 	else if (*ptr == '%' || *ptr == ':')
 		one_arg_ind(arg, c, ptr);
+	else
+		error(7);
 }
 
 void	validate_command(t_c *p, t_cmd *c, int j, int k)
@@ -63,7 +67,6 @@ void	validate_command(t_c *p, t_cmd *c, int j, int k)
 	int		i;
 
 	i = 0;
-	p->counter = 0;
 	ptr = ft_strstr(p->line, g_optab[c->number].c_name);
 	if (p->checker2 == 42)
 	{
@@ -73,15 +76,16 @@ void	validate_command(t_c *p, t_cmd *c, int j, int k)
 	}
 	if (!comma_existing(p, 0))
 	{
+		check_cm_instring(p, -1);
 		write_one_arg(ptr, c, NULL);
 		return ;
 	}
-	count_comma(p, j);
 	ptr = ptr + ft_strlen(g_optab[c->number].c_name);
+	count_comma(p, j, ptr);
 	while (*ptr == ' ' || *ptr == '\t')
 		ptr++;
 	string = ft_strsplit(ptr, ',');
-	start_search_signs(p, string, i, c);
+	start_search_signs(string, i, c);
 	split_del(string);
 }
 

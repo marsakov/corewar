@@ -12,15 +12,36 @@
 
 #include "../inc/core.h"
 
-void	calc_codage_2(t_c *p, t_cmd *c, int *i)
+void	write_type(t_cmd *c, int j, int type)
 {
-	if (p->line[*i] == '%')
+	t_args	*arg;
+	int		counter;
+	arg = c->args;
+	counter = 0;
+	while (arg->next)
+	{
+		arg = arg->next;
+		counter++;
+	}
+	j = counter - j;
+	arg = c->args;
+	while (arg && arg->number - 1 != j)
+		arg = arg->next;
+	if (arg)
+		arg->type = type; 
+	else
+		ft_printf("YŸYyYYYYYyyyyyyyyyyyyyyyyyy\n");
+}
+
+void	calc_codage_2(t_c *p, t_cmd *c, int *i, int j)
+{
+	if (p->line[*i] == '%' && (c->cmd_s += g_optab[c->number].l_size))
 	{
 		c->codage >>= 2;
-		c->cmd_s += g_optab[c->number].l_size;
 		c->codage += 128;
 		while (p->line[*i] != ',' && *i >= 0)
 			(*i)--;
+		write_type(c, j, 2);
 	}
 	else if (p->line[*i] == 'r' && ++c->cmd_s)
 	{
@@ -28,6 +49,7 @@ void	calc_codage_2(t_c *p, t_cmd *c, int *i)
 		c->codage += 64;
 		while (p->line[*i] != ',' && *i >= 0)
 			(*i)--;
+		write_type(c, j, 1);
 	}
 	else if (p->line[*i] == ',' || p->line[*i] == ' ' || p->line[*i] == '\t')
 	{
@@ -36,10 +58,11 @@ void	calc_codage_2(t_c *p, t_cmd *c, int *i)
 		c->codage += 192;
 		while (p->line[*i] != ',' && *i >= 0)
 			(*i)--;
+		write_type(c, j, 3);
 	}
 }
 
-void	calc_codage(t_c *p, t_cmd *c, int i)
+void	calc_codage(t_c *p, t_cmd *c, int i, int j)
 {
 	c->codage = 0;
 	c->cmd_s = 1;
@@ -57,11 +80,12 @@ void	calc_codage(t_c *p, t_cmd *c, int i)
 				i--;
 			i--;
 		}
-		else if (ft_isdigit(p->line[i]) && (!ft_isalpha(p->line[i - 1])
-			|| p->line[i - 1] == 'r') && !ft_isalnum(p->line[i - 2]))
+		else if (ft_isdigit(p->line[i]))
 			while (ft_isdigit(p->line[i]) || p->line[i] == '-')
 				i--;
-		calc_codage_2(p, c, &i);
+		while (ft_isalnum(p->line[i]) || (p->line[i] == 'r' && (p->line[i - 1] == ' ' || p->line[i - 1] == ',' || p->line[i - 1] == '\t')))
+			i--;
+		calc_codage_2(p, c, &i, j++);
 		i--;
 	}
 }

@@ -85,14 +85,10 @@ void	write_name_cont(t_c *p, int i, int count, int tmp)
 		error(4);
 }
 
-void	write_bot_name(t_c *p, int i)
+void	write_bot_name(t_c *p, int i, int count, int tmp)
 {
-	int		count;
-	int		tmp;
 	char	*needle;
 
-	tmp = 0;
-	count = 0;
 	if ((needle = ft_strstr(p->file, ".name")))
 	{
 		while (p->file[i])
@@ -108,6 +104,7 @@ void	write_bot_name(t_c *p, int i)
 		}
 		if (p->flag != 42)
 			error(2);
+		validate_name(p, i);
 		write_name_cont(p, i, count, tmp);
 	}
 	else
@@ -138,7 +135,5 @@ void	error(int i)
 		ft_printf("%s\n", "Wrong file name");
 	else if (i == 11)
 		ft_printf("%s\n", "Wrong command argument");
-	else if (i > 11)
-		error2(i);
 	exit(0);
 }

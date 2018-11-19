@@ -30,8 +30,10 @@ int		if_not_cmd(char *ptr, t_c *p, int i, int k)
 	return (0);
 }
 
-void	count_comma(t_c *p, int j)
+void	count_comma(t_c *p, int j, char *ptr)
 {
+	int res;
+
 	while (p->line[++j])
 	{
 		if (p->line[j] == ',')
@@ -39,6 +41,9 @@ void	count_comma(t_c *p, int j)
 		if (p->line[j] == ',' && p->line[j + 1] == ',')
 			error(8);
 	}
+	res = count_commands(ptr);
+	if ((p->counter + 1) != res)
+		error2(14);
 }
 
 t_cmd	*find_label(t_cmd *t, char *label)
@@ -76,7 +81,7 @@ void	find_this_label(t_c *p, t_cmd *t, t_args *ar)
 			return ;
 		}
 		else
-			error(15);
+			error2(15);
 	}
 	ar->ar_n = temp->size_before - t->size_before;
 }
@@ -93,11 +98,7 @@ void	find_label_instruct(t_c *p)
 		while (argum)
 		{
 			if (argum->label)
-			{
 				find_this_label(p, temp, argum);
-				free(argum->label);
-				argum->label = NULL;
-			}
 			argum = argum->next;
 		}
 		temp = temp->next;

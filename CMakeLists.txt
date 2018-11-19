@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.12)
-project(core_together)
+project(core_all C)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 11)
 
 include_directories(inc)
 include_directories(libft/includes)
 
-add_executable(core_together
+add_executable(core_all
         inc/core.h
         inc/op.h
         libft/includes/libft.h
@@ -88,6 +88,7 @@ add_executable(core_together
         libft/print_unicode.c
         libft/prints.c
         srcs/core_first.c
+        srcs/finish_assembler.c
         srcs/finish_validation.c
         srcs/make_cmd_list.c
         srcs/start_read_cmd.c
@@ -96,5 +97,4 @@ add_executable(core_together
         srcs/write_binary.c
         srcs/write_bot_name.c
         srcs/write_couple_arg.c
-        srcs/writing_labels.c
-        ultima.s)
+        srcs/writing_labels.c)
