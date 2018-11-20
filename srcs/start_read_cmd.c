@@ -53,18 +53,11 @@ void	calc_codage(t_c *p, t_cmd *c, int i, int j)
 	{
 		while (i >= 0 && (p->line[i] == ' ' || p->line[i] == '\t'))
 			i--;
-		if (ft_isalpha(p->line[i]))
-		{
-			while (p->line[i] != ':')
-				i--;
+		while (!ft_strchr("%r, \t", p->line[i]))
 			i--;
-		}
-		else if (ft_isdigit(p->line[i]))
-			while (ft_isdigit(p->line[i]) || p->line[i] == '-')
+		while (p->line[i] == 'r' && !ft_strchr(", \t", p->line[i - 1]) && i--)
+			while (!ft_strchr("%r, \t", p->line[i]))
 				i--;
-		while (ft_isalnum(p->line[i]) && p->line[i] != 'r' && p->line[i - 1]
-			!= ' ' && p->line[i - 1] != ',' && p->line[i - 1] != '\t')
-			i--;
 		calc_codage_2(p, c, &i, j++);
 		i--;
 	}
