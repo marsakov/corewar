@@ -12,27 +12,6 @@
 
 #include "../inc/core.h"
 
-void	write_type(t_cmd *c, int j, int type)
-{
-	t_args	*arg;
-	int		counter;
-	arg = c->args;
-	counter = 0;
-	while (arg->next)
-	{
-		arg = arg->next;
-		counter++;
-	}
-	j = counter - j;
-	arg = c->args;
-	while (arg && arg->number - 1 != j)
-		arg = arg->next;
-	if (arg)
-		arg->type = type; 
-	else
-		ft_printf("YŸYyYYYYYyyyyyyyyyyyyyyyyyy\n");
-}
-
 void	calc_codage_2(t_c *p, t_cmd *c, int *i, int j)
 {
 	if (p->line[*i] == '%' && (c->cmd_s += g_optab[c->number].l_size))
@@ -83,7 +62,8 @@ void	calc_codage(t_c *p, t_cmd *c, int i, int j)
 		else if (ft_isdigit(p->line[i]))
 			while (ft_isdigit(p->line[i]) || p->line[i] == '-')
 				i--;
-		while (ft_isalnum(p->line[i]) || (p->line[i] == 'r' && (p->line[i - 1] == ' ' || p->line[i - 1] == ',' || p->line[i - 1] == '\t')))
+		while (ft_isalnum(p->line[i]) && p->line[i] != 'r' && p->line[i - 1]
+			!= ' ' && p->line[i - 1] != ',' && p->line[i - 1] != '\t')
 			i--;
 		calc_codage_2(p, c, &i, j++);
 		i--;

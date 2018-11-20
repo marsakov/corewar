@@ -143,4 +143,12 @@ void				validate_name(t_c *p, int i);
 void				check_cm_instring(t_c *p, int i);
 int					count_commands(char *p);
 
+/*
+** flag_a
+*/
+void				flag_a(t_c *file);
+void				output_first(t_cmd *lst);
+void				output_second(t_cmd *lst);
+void				write_type(t_cmd *c, int j, int type);
+
 #endif
