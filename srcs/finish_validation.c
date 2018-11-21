@@ -80,7 +80,7 @@ void	error2(int i)
 	else if (i == 13)
 		ft_printf("%s\n", "Wrong label string");
 	else if (i == 14)
-		ft_printf("%s\n", "Error too much  ot too less comma in string");
+		ft_printf("%s\n", "Error too much or too less comma in string");
 	else if (i == 15)
 		ft_printf("%s\n", "Error: no such label");
 	else if (i == 16)
@@ -89,6 +89,10 @@ void	error2(int i)
 		ft_printf("%s\n", "Wrong string with name");
 	else if (i == 18)
 		ft_printf("%s\n", "Wrong label in argument");
+	else if (i == 19)
+		ft_printf("%s\n", "Too much or too less arguments");
+	else if (i == 20)
+        ft_printf("%s\n", "Expected [\"]");
 	exit(0);
 }
 

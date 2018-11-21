@@ -88,6 +88,7 @@ void	check_file_name(char *str, t_c *p)
 	p->f_name = ft_strjoin(p->f_name, ".cor");
 	free(tmp);
 	start_reading(p, str, cmd);
+	check_cmd_args(p);
 }
 
 void	open_file(t_c *ptr, char *str)
@@ -128,5 +129,7 @@ int		main(int argc, char **argv)
 	file_creator(ptr);
 	if (argc == 3)
 		flag_a(ptr);
+	else
+		ft_printf("Writing output program to %s\n", ptr->f_name);
 	return (0);
 }

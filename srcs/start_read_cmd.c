@@ -43,6 +43,9 @@ void	calc_codage_2(t_c *p, t_cmd *c, int *i, int j)
 
 void	calc_codage(t_c *p, t_cmd *c, int i, int j)
 {
+	int label;
+
+	label = 0;
 	c->codage = 0;
 	c->cmd_s = 1;
 	while (p->line[i] && p->line[i] != '#' && p->line[i] != ';')
@@ -53,11 +56,13 @@ void	calc_codage(t_c *p, t_cmd *c, int i, int j)
 	{
 		while (i >= 0 && (p->line[i] == ' ' || p->line[i] == '\t'))
 			i--;
-		while (!ft_strchr("%r, \t", p->line[i]))
-			i--;
+		skip(p, &i, &label);
 		while (p->line[i] == 'r' && !ft_strchr(", \t", p->line[i - 1]) && i--)
-			while (!ft_strchr("%r, \t", p->line[i]))
-				i--;
+			skip(p, &i, &label);
+		if (p->line[i] == '-')
+			i--;
+		if (label || !ft_strchr("%r, \t", p->line[i]))
+			error2(12);
 		calc_codage_2(p, c, &i, j++);
 		i--;
 	}

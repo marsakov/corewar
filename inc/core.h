@@ -151,4 +151,11 @@ void				output_first(t_cmd *lst);
 void				output_second(t_cmd *lst);
 void				write_type(t_cmd *c, int j, int type);
 
+/*
+** finish assembler
+*/
+void				check_cmd_args(t_c *p);
+void				skip(t_c *p, int *i, int *label);
+
+
 #endif

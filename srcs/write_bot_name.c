@@ -17,11 +17,14 @@ void	write_comment_cont(t_c *p, int i, int count, int tmp)
 	int j;
 
 	j = 0;
-	while (p->file[++tmp] != '\"')
+	while (p->file[tmp] != '\"' && p->file[tmp] != '\0')
+	{
+		tmp++;
 		count++;
+	}
 	if (count > 2048)
 		error(5);
-	while (p->file[++i] != '\"')
+	while (p->file[++i] != '\"' && p->file[i] != '\0')
 	{
 		p->comment[j] = p->file[i];
 		j++;

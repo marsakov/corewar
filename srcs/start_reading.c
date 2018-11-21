@@ -16,28 +16,28 @@ void	check_if_finish(t_c *p, int c)
 {
 	int			i;
 	static int	lm = 0;
+	int			gnl;
 
-	i = -1;
-	lm++;
-	if (lm > 2)
+	if ((i = -1) && ++lm > 2)
 		error2(16);
 	while (p->line[++i])
-		if (p->line[i] == '\"')
-			c++;
-	if (c == 2)
+		(p->line[i] == '\"') ? ++c : 0;
+	if (c % 2 == 0)
 		free(p->line);
 	else
 	{
 		free(p->line);
-		while (get_next_line(p->fd, &(p->line)))
+		while ((gnl = get_next_line(p->fd, &(p->line))) > 0)
 		{
-			if ((p->c = ft_strchr(p->line, '\"')))
+			if (p->line && (p->c = ft_strchr(p->line, '\"')))
 			{
 				free(p->line);
 				break ;
 			}
 			free(p->line);
 		}
+		if (gnl == 0)
+			error2(20);
 	}
 }
 

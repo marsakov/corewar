@@ -12,6 +12,36 @@
 
 #include "../inc/core.h"
 
+void	skip(t_c *p, int *i, int *label)
+{
+	while (!ft_strchr("%r, \t", p->line[*i]) &&
+		(ft_isalnum(p->line[*i]) || p->line[*i] == ':' || p->line[*i] == '_'))
+	{
+		if (ft_isalpha(p->line[*i]))
+			*label = 1;
+		if (*label && p->line[*i] == ':')
+			(*label)--;
+		(*i)--;
+	}
+}
+
+void	check_cmd_args(t_c *p)
+{
+	t_cmd	*cmd;
+	t_args	*arg;
+
+	cmd = p->cmd_p;
+	while (cmd)
+	{
+		arg = cmd->args;
+		while (arg->next)
+			arg = arg->next;
+		if (arg->number != g_optab[cmd->number].n_arg)
+			error2(19);
+		cmd = cmd->next;
+	}
+}
+
 void	check_cm_instring(t_c *p, int i)
 {
 	int checker;
