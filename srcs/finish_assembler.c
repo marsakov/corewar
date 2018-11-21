@@ -77,7 +77,7 @@ void	validate_name(t_c *p, int i)
 
 	flag = 0;
 	i += 5;
-	while (p->file[i] == ' ' || p->file[i] == '\t')
+	while (p->file[i] && (p->file[i] == ' ' || p->file[i] == '\t'))
 		i++;
 	if (p->file[i] != '\"')
 		error2(17);

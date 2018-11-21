@@ -93,6 +93,8 @@ void	error2(int i)
 		ft_printf("%s\n", "Too much or too less arguments");
 	else if (i == 20)
         ft_printf("%s\n", "Expected [\"]");
+    else if (i == 21)
+        ft_printf("%s\n", "Syntax error at token [TOKEN][005:001] ENDLINE");
 	exit(0);
 }
 

@@ -12,7 +12,7 @@
 
 #include "../inc/core.h"
 
-void	check_if_finish(t_c *p, int c)
+void	check_if_finish(t_c *p, int c, int comment)
 {
 	int			i;
 	static int	lm = 0;
@@ -22,6 +22,8 @@ void	check_if_finish(t_c *p, int c)
 		error2(16);
 	while (p->line[++i])
 		(p->line[i] == '\"') ? ++c : 0;
+	if (c == 0 && comment == 1)
+		error2(21);
 	if (c % 2 == 0)
 		free(p->line);
 	else
@@ -94,12 +96,13 @@ void	start_reading(t_c *p, char *str, t_cmd *cmd)
 		error(1);
 	while (get_next_line(p->fd, &(p->line)) > 0)
 	{
+		ft_printf("%s\n", p->line);
 		if (p->line[0] == '#')
 			free(p->line);
 		else if (strstr(p->line, ".comment"))
-			check_if_finish(p, 0);
+			check_if_finish(p, 0, 1);
 		else if (strstr(p->line, ".name"))
-			check_if_finish(p, 0);
+			check_if_finish(p, 0, 0);
 		else if (!ft_strcmp(p->line, ""))
 			free(p->line);
 		else if (empty_string(p, 0))
