@@ -17,14 +17,14 @@ void	write_comment_cont(t_c *p, int i, int count, int tmp)
 	int j;
 
 	j = 0;
-	while (p->file[tmp] != '\"' && p->file[tmp] != '\0')
+	while (p->file[tmp] && p->file[tmp] != '\0' && p->file[tmp] != '\"')
 	{
 		tmp++;
 		count++;
 	}
 	if (count > 2048)
 		error(5);
-	while (p->file[++i] != '\"' && p->file[i] != '\0')
+	while (p->file[++i] != '\0' && p->file[i] != '\"')
 	{
 		p->comment[j] = p->file[i];
 		j++;
@@ -39,7 +39,7 @@ void	write_comment(t_c *p)
 	int count;
 
 	i = 0;
-	count = 0;
+	count = 0;	
 	while (p->file[i])
 	{
 		if (p->file[i] == '.' && p->file[i + 1] == 'c' &&
@@ -55,7 +55,7 @@ void	write_comment(t_c *p)
 	}
 	if (p->flag != 69)
 		error(4);
-	while (p->file[i] != '\"')
+	while (p->file[i] && p->file[i] != '\"')
 		i++;
 	tmp = i;
 	write_comment_cont(p, i, count, tmp);
@@ -67,16 +67,16 @@ void	write_name_cont(t_c *p, int i, int count, int tmp)
 	char	*needle;
 
 	j = 0;
-	while (p->file[i] != '\"')
+	while (p->file[i] && p->file[i] != '\"')
 		i++;
 	tmp = i;
-	while (p->file[++tmp] != '\"')
+	while (p->file[++tmp] && p->file[tmp] != '\"')
 		count++;
 	if (count > 128)
 		error(3);
 	ft_bzero(p->player_n, 128);
 	ft_bzero(p->comment, 2048);
-	while (p->file[++i] != '\"')
+	while (p->file[++i] && p->file[i] != '\"')
 	{
 		p->player_n[j] = p->file[i];
 		j++;
