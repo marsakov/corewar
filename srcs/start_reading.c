@@ -96,7 +96,7 @@ void	start_reading(t_c *p, char *str, t_cmd *cmd)
 		error(1);
 	while (get_next_line(p->fd, &(p->line)) > 0)
 	{
-		ft_printf("%s\n", p->line);
+		// ft_printf("%s\n", p->line);
 		if (p->line[0] == '#')
 			free(p->line);
 		else if (strstr(p->line, ".comment"))

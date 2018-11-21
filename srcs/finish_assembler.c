@@ -35,7 +35,13 @@ void	check_cmd_args(t_c *p)
 	{
 		arg = cmd->args;
 		while (arg->next)
+		{
+			if (arg->type == 1 && arg->ar_n >= 100)
+				error2(19);
 			arg = arg->next;
+		}
+		if (arg->type == 1 && arg->ar_n >= 100)
+				error2(19);
 		if (arg->number != g_optab[cmd->number].n_arg)
 			error2(19);
 		cmd = cmd->next;

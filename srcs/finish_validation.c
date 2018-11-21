@@ -92,9 +92,11 @@ void	error2(int i)
 	else if (i == 19)
 		ft_printf("%s\n", "Too much or too less arguments");
 	else if (i == 20)
-        ft_printf("%s\n", "Expected [\"]");
-    else if (i == 21)
-        ft_printf("%s\n", "Syntax error at token [TOKEN][005:001] ENDLINE");
+		ft_printf("%s\n", "Expected [\"]");
+	else if (i == 21)
+		ft_printf("%s\n", "Syntax error at token [TOKEN][005:001] ENDLINE");
+	else if (i == 22)
+		ft_printf("%s\n", "No command");
 	exit(0);
 }
 
@@ -105,6 +107,8 @@ void	new_function(t_c *p)
 
 	point = p->cmd_p;
 	temp = 0;
+	if (!point)
+		error2(22);
 	while (point)
 	{
 		point->size_before = temp;
