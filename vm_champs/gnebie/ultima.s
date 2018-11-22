@@ -1,15 +1,10 @@
-.name "Ul
+		.name 
+		"Ul
 t
 
 "
 
-.comment "jhbvgvj"
-.comment "d
-f
-nvf
-
-
-    n"
+ .comment "jhbvgvj"
 
 
 begin_coromp2:

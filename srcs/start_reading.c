@@ -22,8 +22,11 @@ void	check_if_finish(t_c *p, char *ptr, int comment)
 		error2(16);
 	i = 0;
 	while (p->line + i != ptr)
+	{
 		if (p->line[i] != ' ' && p->line[i] != '\t')
 			error(8);
+		i++;
+	}
 	i = (comment == 1) ? 8 : 5;
 	while (ptr[i] == ' ' || ptr[i] == '\t')
 		i++;
