@@ -73,14 +73,28 @@ void	symbols_before_cmd(t_c *p, char *ptr)
 	int		m;
 	char	*s;
 
-	m = 1;
+	m = 0;
 	s = ft_strchr(p->line, ':');
-	while (s && s + m != ptr)
-	{
-		if (s[m] != ' ' && s[m] != '\t')
-			error(9);
-		m++;
-	}
+	if (s && s < ptr && ++m)
+		while (s + m != ptr)
+		{
+			if (s[m] != ' ' && s[m] != '\t')
+			{
+				ft_printf("%s\n", p->line);
+				error(9);
+			}
+			m++;
+		}
+	else
+		while (p->line + m != ptr)
+		{
+			if (p->line[m] != ' ' && p->line[m] != '\t')
+			{
+				ft_printf("%s\n", p->line);
+				error(9);
+			}
+			m++;
+		}
 }
 
 int		is_command_nolabel(t_c *p, int i, int k)
@@ -89,7 +103,6 @@ int		is_command_nolabel(t_c *p, int i, int k)
 
 	k = -1;
 	ptr = ft_strstr(p->line, g_optab[i].c_name);
-	symbols_before_cmd(p, ptr);
 	if ((if_not_cmd(ptr, p, i, 0)))
 		return (1);
 	if (p->checker2 == 10)
@@ -126,6 +139,7 @@ int		check_point(t_c *p, int k, int c)
 
 void	read_command(t_c *p, int i, int k, t_cmd *cmd)
 {
+	symbols_before_cmd(p, ft_strstr(p->line, g_optab[i].c_name));
 	if (!p->cmd_p)
 	{
 		cmd = (t_cmd *)malloc(sizeof(t_cmd));

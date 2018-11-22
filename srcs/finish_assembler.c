@@ -25,7 +25,7 @@ void	skip(t_c *p, int *i, int *label)
 		if (*label && p->line[*i] == ':')
 			(*label)--;
 		if (p->line[*i] == '_' && !(*label) && !ft_isalpha(p->line[*i - 1]))
-				error2(12);
+			error2(12);
 		(*i)--;
 	}
 }
@@ -46,7 +46,7 @@ void	check_cmd_args(t_c *p)
 			arg = arg->next;
 		}
 		if (arg->type == 1 && arg->ar_n >= 100)
-				error2(19);
+			error2(19);
 		if (arg->number != g_optab[cmd->number].n_arg)
 			error2(19);
 		cmd = cmd->next;

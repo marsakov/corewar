@@ -39,7 +39,7 @@ void	write_comment(t_c *p)
 	int count;
 
 	i = 0;
-	count = 0;	
+	count = 0;
 	while (p->file[i])
 	{
 		if (p->file[i] == '.' && p->file[i + 1] == 'c' &&

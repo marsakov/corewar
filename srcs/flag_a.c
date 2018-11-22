@@ -12,11 +12,11 @@
 
 #include "../inc/core.h"
 
-int  label_checker(t_c *p, int i)
+int		label_checker(t_c *p, int i)
 {
 	char	*p1;
 	char	*p2;
-	int	k;
+	int		k;
 
 	k = 0;
 	p1 = ft_strchr(p->line, ':');

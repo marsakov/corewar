@@ -16,7 +16,6 @@ void	check_if_finish(t_c *p, int c, int comment)
 {
 	int			i;
 	static int	lm = 0;
-	int			gnl;
 
 	if ((i = -1) && ++lm > 2)
 		error2(16);
@@ -29,7 +28,7 @@ void	check_if_finish(t_c *p, int c, int comment)
 	else
 	{
 		free(p->line);
-		while ((gnl = get_next_line(p->fd, &(p->line))) > 0)
+		while ((c = get_next_line(p->fd, &(p->line))) > 0)
 		{
 			if (p->line && (p->c = ft_strchr(p->line, '\"')))
 			{
@@ -38,7 +37,7 @@ void	check_if_finish(t_c *p, int c, int comment)
 			}
 			free(p->line);
 		}
-		if (gnl == 0)
+		if (c == 0)
 			error2(20);
 	}
 }
@@ -96,7 +95,6 @@ void	start_reading(t_c *p, char *str, t_cmd *cmd)
 		error(1);
 	while (get_next_line(p->fd, &(p->line)) > 0)
 	{
-		// ft_printf("%s\n", p->line);
 		if (p->line[0] == '#')
 			free(p->line);
 		else if (strstr(p->line, ".comment"))

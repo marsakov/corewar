@@ -103,11 +103,9 @@ void	write_label_str(t_c *p, t_cmd *c, t_label *new, int i)
 	while (p->line[i] != ':')
 	{
 		if (ft_isalnum(p->line[i]) || p->line[i] == '_')
-			new->label[j] = p->line[i];
+			new->label[j++] = p->line[i++];
 		else
 			error(10);
-		i++;
-		j++;
 	}
 	new->label[j] = '\0';
 	if (p->tmp)
