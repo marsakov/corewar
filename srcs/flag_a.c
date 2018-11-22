@@ -12,6 +12,27 @@
 
 #include "../inc/core.h"
 
+int  label_checker(t_c *p, int i)
+{
+	char	*p1;
+	char	*p2;
+	int	k;
+
+	k = 0;
+	p1 = ft_strchr(p->line, ':');
+	p2 = ft_strstr(p->line, g_optab[i].c_name);
+	if (p->checker2 == 42)
+	{
+		while (p2[k] != ':')
+			k++;
+		p2 = ft_strstr(p2 + k, g_optab[i].c_name);
+	}
+	if (p1 < p2)
+		return (1);
+	else
+		return (0);
+}
+
 void	write_type(t_cmd *c, int j, int type)
 {
 	t_args	*arg;

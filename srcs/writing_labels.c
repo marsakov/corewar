@@ -44,7 +44,6 @@ void	make_label(t_c *p)
 
 void	check_label(t_c *p, t_cmd *c, int i)
 {
-	char	*p2;
 	t_cmd	*temp;
 	int		k;
 
@@ -54,9 +53,9 @@ void	check_label(t_c *p, t_cmd *c, int i)
 	temp = p->cmd_p;
 	while (temp->next)
 		temp = temp->next;
-	if ((p2 = ft_strchr(p->line, ':')))
+	if ((ft_strchr(p->line, ':')))
 	{
-		if (*(p2 + 1) == ' ' || *(p2 + 1) == '\t')
+		if (label_checker(p, i))
 			write_label(p, c);
 	}
 	if (p->tmp)

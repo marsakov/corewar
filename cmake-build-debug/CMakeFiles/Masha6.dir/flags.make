@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/vkozhemi/Corewar/Masha6/inc -I/Users/vkozhemi/Corewar/Masha6/libft/includes 
+C_INCLUDES = -I/Users/msakovyc/Downloads/core_all/inc -I/Users/msakovyc/Downloads/core_all/libft/includes 
 

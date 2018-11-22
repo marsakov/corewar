@@ -45,7 +45,6 @@ void	check_if_finish(t_c *p, int c, int comment)
 
 void	reading_map(t_c *p, int i, t_cmd *c)
 {
-	
 	if (ft_strchr(p->line, '.'))
 		if (!check_point(p, 0, 0))
 			error(7);

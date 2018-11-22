@@ -150,6 +150,7 @@ void				flag_a(t_c *file);
 void				output_first(t_cmd *lst);
 void				output_second(t_cmd *lst);
 void				write_type(t_cmd *c, int j, int type);
+int					label_checker(t_c *p, int i);
 
 /*
 ** finish assembler
