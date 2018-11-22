@@ -14,6 +14,9 @@
 
 void	skip(t_c *p, int *i, int *label)
 {
+	char *c;
+
+	c = 0;
 	while (!ft_strchr("%r, \t", p->line[*i]) &&
 		(ft_isalnum(p->line[*i]) || p->line[*i] == ':' || p->line[*i] == '_'))
 	{
@@ -21,6 +24,9 @@ void	skip(t_c *p, int *i, int *label)
 			*label = 1;
 		if (*label && p->line[*i] == ':')
 			(*label)--;
+		if (p->line[*i] == '_')
+			if (!(c = ft_strchr(p->line, ':')) || c - p->line > *i)
+				error2(12);
 		(*i)--;
 	}
 }
@@ -87,21 +93,20 @@ void	validate_name(t_c *p, int i)
 		i++;
 	if (p->file[i] && p->file[i] != '\"')
 		error2(17);
-	i++;
-	while (p->file[i])
+	while (p->file[++i])
 	{
-		if (p->file[i] == '\"')
-		{
-			flag++;
+		if (p->file[i] == '\"' && ++flag)
 			break ;
-		}
 		if (p->file[i] == '.' && p->file[i + 1] == 'c' &&
 			p->file[i + 2] == 'o' && p->file[i + 3] == 'm'
 			&& p->file[i + 4] == 'm' && p->file[i + 5] == 'e'
 			&& p->file[i + 6] == 'n' && p->file[i + 7] == 't')
 			break ;
-		i++;
 	}
+	if (p->file[i] == '\"')
+		while (!ft_strchr("\n;#", p->file[++i]))
+			if (!ft_strchr("\t ", p->file[i]))
+				error2(17);
 	if (!flag)
 		error(9);
 }
