@@ -1,6 +1,6 @@
-.name "Ultima"
+.name "Ult"
 
-.comment  "dfnvdfnb"#gdg"
+.comment "dfnvfn"
 
 
 begin_coromp2:

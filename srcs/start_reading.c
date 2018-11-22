@@ -12,42 +12,43 @@
 
 #include "../inc/core.h"
 
-void	check_if_finish(t_c *p, int c, int comment)
+void	check_if_finish(t_c *p, char *ptr, int comment)
 {
-	int				i;
-	static int		lm = 0;
-	int				gnl;
+	int	i;
+	int gnl;
 
-	if ((i = -1) && ++lm > 2)
-		error2(16);
-	while (p->line[++i])
-	{
-		(p->line[i] == '\"') ? ++c : 0;
-		while (p->line[i] == ' ' || p->line[i] == '\t')
-			i++;
-		if (c == 2 && (p->line[i + 1] && (p->line[i + 1] == '#' || p->line[i + 1] == ';')))
-			break;
-		if (c == 2 && (p->line[i + 1] && (p->line[i + 1] != '#' && p->line[i + 1] != ';')))
-			error2(21);
-	}
-	if (c == 0 && comment == 1)
-		error2(21);
-	if (c % 2 == 0)
-		free(p->line);
-	else
+	i = 0;
+	while (p->line + i != ptr)
+		if (p->line[i] != ' ' && p->line[i] != '\t')
+			error(8);
+	i = (comment == 1) ? 8 : 5;
+	while (ptr[i] == ' ' || ptr[i] == '\t')
+		i++;
+	if (ptr[i++] != '\"')
+		error(8);
+	while (ptr[i] && ptr[i] != '\"')
+		i++;
+	if (ptr[i++] != '\"')
 	{
 		free(p->line);
 		while ((gnl = get_next_line(p->fd, &(p->line))) > 0)
 		{
 			if (p->line && (p->c = ft_strchr(p->line, '\"')))
 			{
-				free(p->line);
+				ptr = ft_strchr(p->line, '\"');
+				i = 1;
 				break ;
 			}
 			free(p->line);
 		}
 		if (gnl == 0)
 			error2(20);
+	}
+	while (ptr[i] && ptr[i] != ';' && ptr[i] != '#')
+	{
+		if (ptr[i] != '\t' && ptr[i] != ' ')
+			error2(20);
+		i++;
 	}
 }
 
@@ -107,9 +108,9 @@ void	start_reading(t_c *p, char *str, t_cmd *cmd)
 		if (p->line[0] == '#')
 			free(p->line);
 		else if (strstr(p->line, ".comment"))
-			check_if_finish(p, 0, 1);
+			check_if_finish(p, strstr(p->line, ".comment"), 1);
 		else if (strstr(p->line, ".name"))
-			check_if_finish(p, 0, 0);
+			check_if_finish(p, strstr(p->line, ".name"), 0);
 		else if (!ft_strcmp(p->line, ""))
 			free(p->line);
 		else if (empty_string(p, 0))
