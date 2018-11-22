@@ -16,7 +16,10 @@ void	check_if_finish(t_c *p, char *ptr, int comment)
 {
 	int	i;
 	int gnl;
+	static int		lm = 0;
 
+	if (++lm > 2)
+		error2(16);
 	i = 0;
 	while (p->line + i != ptr)
 		if (p->line[i] != ' ' && p->line[i] != '\t')
