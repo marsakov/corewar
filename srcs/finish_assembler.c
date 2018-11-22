@@ -24,8 +24,7 @@ void	skip(t_c *p, int *i, int *label)
 			*label = 1;
 		if (*label && p->line[*i] == ':')
 			(*label)--;
-		if (p->line[*i] == '_')
-			if (!(c = ft_strchr(p->line, ':')) || c - p->line > *i)
+		if (p->line[*i] == '_' && !(*label) && !ft_isalpha(p->line[*i - 1]))
 				error2(12);
 		(*i)--;
 	}

@@ -18,6 +18,8 @@ int		if_not_cmd(char *ptr, t_c *p, int i, int k)
 
 	while (ft_isalnum(ptr[k]) || ptr[k] == '_')
 		k++;
+	if (k == 0)
+		return 0;
 	if (ptr[k] == ':')
 	{
 		p->checker2 = 10;

@@ -96,6 +96,8 @@ void	write_label_str(t_c *p, t_cmd *c, t_label *new, int i)
 	j = i;
 	while (p->line[j] != ':')
 		j++;
+	if (j == 0)
+		error(9);
 	new->label = (char *)malloc(sizeof(char) * (j + 1));
 	j = 0;
 	while (p->line[i] != ':')

@@ -68,12 +68,28 @@ void	calc_codage(t_c *p, t_cmd *c, int i, int j)
 	}
 }
 
+void	symbols_before_cmd(t_c *p, char *ptr)
+{
+	int		m;
+	char	*s;
+
+	m = 1;
+	s = ft_strchr(p->line, ':');
+	while (s && s + m != ptr)
+	{
+		if (s[m] != ' ' && s[m] != '\t')
+			error(9);
+		m++;
+	}
+}
+
 int		is_command_nolabel(t_c *p, int i, int k)
 {
 	char	*ptr;
 
 	k = -1;
 	ptr = ft_strstr(p->line, g_optab[i].c_name);
+	symbols_before_cmd(p, ptr);
 	if ((if_not_cmd(ptr, p, i, 0)))
 		return (1);
 	if (p->checker2 == 10)
@@ -81,10 +97,7 @@ int		is_command_nolabel(t_c *p, int i, int k)
 	if (*(ptr + ft_strlen(g_optab[i].c_name)) == '\0'
 		|| *(ptr + ft_strlen(g_optab[i].c_name)) == ',')
 		return (0);
-	if (*(ptr + ft_strlen(g_optab[i].c_name)) != ' '
-		&& *(ptr + ft_strlen(g_optab[i].c_name)) != '\t'
-		&& *(ptr + ft_strlen(g_optab[i].c_name)) != '%'
-		&& *(ptr + ft_strlen(g_optab[i].c_name)) != 'r')
+	if (!ft_strchr(" \t%r", *(ptr + ft_strlen(g_optab[i].c_name))))
 		return (0);
 	ptr = ptr + ft_strlen(g_optab[i].c_name);
 	while (ptr[++k])

@@ -28,11 +28,7 @@ fcntl.h
 stdarg.h
 -
 
-/Users/msakovyc/Downloads/core_all/srcs/finish_assembler.c
-../inc/core.h
-/Users/msakovyc/Downloads/core_all/inc/core.h
-
-/Users/msakovyc/Downloads/core_all/srcs/start_read_cmd.c
+/Users/msakovyc/Downloads/core_all/srcs/make_cmd_list.c
 ../inc/core.h
 /Users/msakovyc/Downloads/core_all/inc/core.h
 
