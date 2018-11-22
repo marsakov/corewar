@@ -12,10 +12,37 @@
 
 #include "../inc/core.h"
 
+void	check_next_comment_line(t_c *p, char *ptr, int *i)
+{
+	int gnl;
+
+	if (ptr[(*i)++] != '\"')
+	{
+		free(p->line);
+		while ((gnl = get_next_line(p->fd, &(p->line))) > 0)
+		{
+			if (p->line && (p->c = ft_strchr(p->line, '\"')))
+			{
+				ptr = ft_strchr(p->line, '\"');
+				*i = 1;
+				break ;
+			}
+			free(p->line);
+		}
+		if (gnl == 0)
+			error2(20);
+	}
+	while (ptr[*i] && ptr[*i] != ';' && ptr[*i] != '#')
+	{
+		if (ptr[*i] != '\t' && ptr[*i] != ' ')
+			error2(20);
+		(*i)++;
+	}
+}
+
 void	check_if_finish(t_c *p, char *ptr, int comment)
 {
-	int	i;
-	int gnl;
+	int				i;
 	static int		lm = 0;
 
 	if (++lm > 2)
@@ -34,28 +61,7 @@ void	check_if_finish(t_c *p, char *ptr, int comment)
 		error(8);
 	while (ptr[i] && ptr[i] != '\"')
 		i++;
-	if (ptr[i++] != '\"')
-	{
-		free(p->line);
-		while ((gnl = get_next_line(p->fd, &(p->line))) > 0)
-		{
-			if (p->line && (p->c = ft_strchr(p->line, '\"')))
-			{
-				ptr = ft_strchr(p->line, '\"');
-				i = 1;
-				break ;
-			}
-			free(p->line);
-		}
-		if (gnl == 0)
-			error2(20);
-	}
-	while (ptr[i] && ptr[i] != ';' && ptr[i] != '#')
-	{
-		if (ptr[i] != '\t' && ptr[i] != ' ')
-			error2(20);
-		i++;
-	}
+	check_next_comment_line(p, ptr, &i);
 }
 
 void	reading_map(t_c *p, int i, t_cmd *c)
@@ -63,7 +69,7 @@ void	reading_map(t_c *p, int i, t_cmd *c)
 	if (ft_strchr(p->line, '.'))
 		if (!check_point(p, 0, 0))
 			error(7);
-	i = 16;
+	i = 19;
 	while (--i >= -1)
 	{
 		p->checker2 = 0;
