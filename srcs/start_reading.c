@@ -1,12 +1,12 @@
 /* ************************************************************************** */
-/*				                                                            */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   start_reading.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkorniie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vkozhemi <vkozhemi@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 11:54:22 by vkorniie          #+#    #+#             */
-/*   Updated: 2018/11/07 11:54:24 by vkorniie         ###   ########.fr       */
+/*   Created: 2018/11/23 15:37:12 by vkozhemi          #+#    #+#             */
+/*   Updated: 2018/11/23 15:37:16 by vkozhemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ void	check_next_comment_line(t_c *p, char *ptr, int *i)
 		free(p->line);
 		while ((gnl = get_next_line(p->fd, &(p->line))) > 0)
 		{
-			if (p->line && (p->c = ft_strchr(p->line, '\"')))
+			if (p->line && (p->c = ft_strchr(p->line, '\"')) && (*i = 1))
 			{
 				ptr = ft_strchr(p->line, '\"');
-				*i = 1;
 				break ;
 			}
 			free(p->line);
@@ -32,6 +31,8 @@ void	check_next_comment_line(t_c *p, char *ptr, int *i)
 		if (gnl == 0)
 			error2(20);
 	}
+	else
+		free(p->line);
 	while (ptr[*i] && ptr[*i] != ';' && ptr[*i] != '#')
 	{
 		if (ptr[*i] != '\t' && ptr[*i] != ' ')
@@ -43,9 +44,8 @@ void	check_next_comment_line(t_c *p, char *ptr, int *i)
 void	check_if_finish(t_c *p, char *ptr, int comment)
 {
 	int				i;
-	static int		lm = 0;
 
-	if (++lm > 2)
+	if (++(p->lm) > 2)
 		error2(16);
 	i = 0;
 	while (p->line + i != ptr)
@@ -135,17 +135,4 @@ void	start_reading(t_c *p, char *str, t_cmd *cmd)
 		}
 	}
 	new_function(p);
-}
-
-int		is_comment(t_c *p, int i)
-{
-	while (i != -1)
-	{
-		if (p->file[i] == '\n')
-			break ;
-		if (p->file[i] == '#' || p->file[i] == ';')
-			return (0);
-		i--;
-	}
-	return (1);
 }

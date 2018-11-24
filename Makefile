@@ -3,7 +3,7 @@ NAME = asm
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
-SRCS = flag_a.c core_first.c finish_assembler.c make_cmd_list.c start_reading.c write_binary.c write_couple_arg.c finish_validation.c start_read_cmd.c start_write_infile.c write_bot_name.c writing_labels.c
+SRCS = flag_a.c core_first.c finish_assembler.c make_cmd_list.c start_reading.c write_binary.c write_couple_arg.c finish_validation.c start_read_cmd.c start_write_infile.c write_bot_name.c writing_labels.c calc_codage.c
 OBJ = $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 
 OBJ_DIR = ./objects/

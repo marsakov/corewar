@@ -20,12 +20,10 @@ void	skip(t_c *p, int *i, int *label)
 	while (!ft_strchr("%r, \t", p->line[*i]) &&
 		(ft_isalnum(p->line[*i]) || p->line[*i] == ':' || p->line[*i] == '_'))
 	{
-		if (ft_isalpha(p->line[*i]))
+		if (ft_isalpha(p->line[*i]) || p->line[*i] == '_')
 			*label = 1;
 		if (*label && p->line[*i] == ':')
 			(*label)--;
-		if (p->line[*i] == '_' && !(*label) && !ft_isalpha(p->line[*i - 1]))
-			error2(12);
 		(*i)--;
 	}
 }

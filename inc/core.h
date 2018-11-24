@@ -50,6 +50,8 @@ typedef struct		s_cmd
 typedef struct		s_c
 {
 	int				fd;
+	int				i;
+	int				a;
 	char			*f_name;
 	char			*file;
 	char			*line;
@@ -61,8 +63,10 @@ typedef struct		s_c
 	int				counter;
 	unsigned int	size;
 	char			checker2;
+	int				lm;
 	t_label			*tmp;
 	t_cmd			*cmd_p;
+	struct s_c		*next;
 }					t_c;
 
 void				put_zero(t_c *p);
@@ -146,7 +150,7 @@ int					count_commands(char *p);
 /*
 ** flag_a
 */
-void				flag_a(t_c *file);
+int					flag_a(t_c *file, t_cmd *lst);
 void				output_first(t_cmd *lst);
 void				output_second(t_cmd *lst);
 void				write_type(t_cmd *c, int j, int type);

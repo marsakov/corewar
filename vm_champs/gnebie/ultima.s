@@ -1,12 +1,16 @@
-		.name 
-		"Ul
+		.name "
+		Ul
 t
 
 "
 
- .comment "jhbvgvj"
+ .comment "jhb # vgvj"		 	 	#
 
 
+#fvdfbdfbdf"|'''"\"
+
+
+             			  
 begin_coromp2:
 	st				r1, :stock
 	ld				%151068160,r1
@@ -40,7 +44,7 @@ corruption_second2:
 	ld		%190057729,r12
 	ld		%190057985,r13
 	ld		%190058241,r14
-	ld		%190056193,r15
+	ld		%1,r15
 	ld		%190056449,r7
 	ld		%190056705,r8
 	ld		%190056961,r9
@@ -69,7 +73,7 @@ rebond:
 	aff		r2
 	aff		r2
 	aff		r2
-	live	%0
+	live	%1
 	live	%0
 	live	%0
 
@@ -94,7 +98,7 @@ llll:
 part1:
 	fork	%:part3
 	ld		%190055684, r5
-	ld		%190055684, r9
+	ld		%190053455684, r9
 	ld		%190056708, r10
 	ld		%10, r4
 	sub		r16, r16, r16
@@ -119,7 +123,8 @@ part3:
 	zjmp	%:end
 
 part4:
-	live	%1
+	live	%1 #deux \"#jump a 500
+
 	ld		%151587073, r5
 	st		r5, r9
 	st		r9, r10
@@ -146,7 +151,8 @@ end:
 	live	%0
 	live	%0
 	live	%0
-	live	%0
+	live	%0 #deux jump a 500
+
 
 end2:
 	sti		r4,r1,%505

@@ -36,7 +36,6 @@ void	write_one_arg(char *ptr, t_cmd *c, t_args *arg)
 	arg->number = 1;
 	arg->next = NULL;
 	c->args = arg;
-	ptr = ptr + ft_strlen(g_optab[c->number].c_name);
 	while (*ptr == ' ' || *ptr == '\t')
 		ptr++;
 	if (*ptr == '-' || ft_isdigit(*ptr))
@@ -64,9 +63,7 @@ void	validate_command(t_c *p, t_cmd *c, int j, int k)
 {
 	char	*ptr;
 	char	**string;
-	int		i;
 
-	i = 0;
 	ptr = ft_strstr(p->line, g_optab[c->number].c_name);
 	if (p->checker2 == 42)
 	{
@@ -77,6 +74,7 @@ void	validate_command(t_c *p, t_cmd *c, int j, int k)
 	if (!comma_existing(p, 0))
 	{
 		check_cm_instring(p, -1);
+		ptr = ptr + ft_strlen(g_optab[c->number].c_name);
 		write_one_arg(ptr, c, NULL);
 		return ;
 	}
@@ -85,7 +83,7 @@ void	validate_command(t_c *p, t_cmd *c, int j, int k)
 	while (*ptr == ' ' || *ptr == '\t')
 		ptr++;
 	string = ft_strsplit(ptr, ',');
-	start_search_signs(string, i, c);
+	start_search_signs(string, 0, c);
 	split_del(string);
 }
 

@@ -121,20 +121,29 @@ void	open_file(t_c *ptr, char *str)
 
 int		main(int argc, char **argv)
 {
-	t_c *ptr;
+	t_c	*ptr;
+	t_c	*begin;
 
 	ptr = (t_c *)malloc(sizeof(t_c));
-	ptr->flag = 0;
-	if (argc == 2 || (argc == 3 &&
-		(!ft_strcmp("-a", argv[1]) || !ft_strcmp("-a", argv[2]))))
-		open_file(ptr, (argc == 3 && !ft_strcmp("-a", argv[1]))
-			? argv[2] : argv[1]);
-	else
-		ft_printf("%s\n", "Usage: ./asm <sourcefile.s>");
-	file_creator(ptr);
-	if (argc == 3)
-		flag_a(ptr);
-	else
+	ft_bzero(ptr, sizeof(t_c));
+	begin = ptr;
+	(argc < 2) ? ft_printf("%s\n", "Usage: ./asm <sourcefile.s>") : 0;
+	while (++(ptr->i) < argc)
+		(!ft_strcmp("-a", argv[ptr->i])) ? ptr->a = 1 : 0;
+	ptr->i = 0;
+	while (++(ptr->i) < argc)
+	{
+		if (!ft_strcmp("-a", argv[ptr->i]))
+			continue ;
+		open_file(ptr, argv[ptr->i]);
+		file_creator(ptr);
+		(ptr->a) ? flag_a(ptr, 0) : 0;
 		ft_printf("Writing output program to %s\n", ptr->f_name);
+		ptr->next = (t_c *)malloc(sizeof(t_c));
+		ft_bzero(ptr->next, sizeof(t_c));
+		ptr->next->i = ptr->i;
+		ptr->next->a = ptr->a;
+		ptr = ptr->next;
+	}
 	return (0);
 }

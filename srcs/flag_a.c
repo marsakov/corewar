@@ -99,9 +99,8 @@ void	output_second(t_cmd *lst)
 	}
 }
 
-void	flag_a(t_c *f)
+int		flag_a(t_c *f, t_cmd *lst)
 {
-	t_cmd	*lst;
 	t_args	*arg;
 
 	ft_printf("Dumping annotated program on standard output\n");
@@ -126,4 +125,5 @@ void	flag_a(t_c *f)
 		ft_printf("\n\n");
 		lst = lst->next;
 	}
+	return (1);
 }
