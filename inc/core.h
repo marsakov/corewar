@@ -58,7 +58,6 @@ typedef struct		s_c
 	char			player_n[128];
 	char			comment[2048];
 	char			*comm;
-	char			*c;
 	char			flag;
 	int				counter;
 	unsigned int	size;

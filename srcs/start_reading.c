@@ -21,7 +21,7 @@ void	check_next_comment_line(t_c *p, char *ptr, int *i)
 		free(p->line);
 		while ((gnl = get_next_line(p->fd, &(p->line))) > 0)
 		{
-			if (p->line && (p->c = ft_strchr(p->line, '\"')) && (*i = 1))
+			if (p->line && ft_strchr(p->line, '\"') && (*i = 1))
 			{
 				ptr = ft_strchr(p->line, '\"');
 				break ;
