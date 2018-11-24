@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="corewar"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/msakovyc/corewar/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/msakovyc/corewar/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/msakovyc/corewar/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="corewar">
+				<Option output="/Users/msakovyc/corewar/cmake-build-debug/corewar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/msakovyc/corewar/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/msakovyc/corewar/inc"/>
+					<Add directory="/Users/msakovyc/corewar/libft/includes"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 corewar"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="corewar/fast">
+				<Option output="/Users/msakovyc/corewar/cmake-build-debug/corewar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/msakovyc/corewar/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/msakovyc/corewar/inc"/>
+					<Add directory="/Users/msakovyc/corewar/libft/includes"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 corewar/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/msakovyc/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/msakovyc/corewar/inc/core.h">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/inc/op.h">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/counters.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_atoi.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_atoi_ptr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_atointmxt.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_bzero.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_count_word.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_isalnum.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_isalpha.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_isascii.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_isdigit.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_isprime.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_isprint.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_itoa.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_lstadd.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_lstdel.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_lstdelone.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_lstiter.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_lstmap.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_lstnew.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_memalloc.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_memccpy.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_memchr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_memcmp.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_memcpy.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_memdel.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_memmove.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_memset.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_nextprime.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_printf.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_putchar.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_putchar_fd.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_putendl.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_putendl_fd.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_putnbr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_putnbr_fd.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_putnstr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_putstr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_putstr_fd.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_range.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_splitdel.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strcat.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strchr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strclr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strcmp.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strcpy.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strdel.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strdup.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strequ.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_striter.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_striteri.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strjoin.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strlcat.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strlen.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strmap.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strmapi.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strncat.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strncmp.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strncpy.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strnequ.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strnew.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strnjoin.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strnstr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strrchr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strrev.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strsplit.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strstr.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strsub.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_strtrim.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_swap.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_tolower.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/ft_toupper.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/get_next_line.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/includes/libft.h">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/print_dc.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/print_puox.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/print_str.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/print_unicode.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/libft/prints.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/calc_codage.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/core_first.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/finish_assembler.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/finish_validation.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/flag_a.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/make_cmd_list.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/start_read_cmd.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/start_reading.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/start_write_infile.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/write_binary.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/write_bot_name.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/write_couple_arg.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/srcs/writing_labels.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/msakovyc/corewar/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

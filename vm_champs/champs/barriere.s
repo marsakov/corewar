@@ -9,7 +9,7 @@
 arriere:	ld	%-5, r5
 		ld	%1024,r4
 arriere2:	ld	%-5, r3
-arriere_live:	live %42
+arriere_livelive:	live %42
 		sti	r4, %:arriere, r3
 		add	r3, r5, r3
 		sti	r4, %:arriere, r3
@@ -23,7 +23,7 @@ arriere_live:	live %42
 		xor	r3,%-430,r15
 		zjmp	%:arriere2
 		and	r6, %0, r6
-		zjmp	%:arriere_live
+		zjmp	%:arriere_livelive
 
 fork_arriere:	live	%42
 		fork	%:arriere
@@ -64,7 +64,7 @@ live_live:	live	%42
 		
 init:		fork	%:kmissile
 		live	%42
-		sti	r1, %:arriere_live, %1	
+		sti	r1, %:arriere_livelive, %1	
 		fork	%:fork_arriere
 		live	%42
 		sti	r1, %:avant_live, %1

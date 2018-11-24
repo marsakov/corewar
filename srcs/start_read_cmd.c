@@ -12,15 +12,17 @@
 
 #include "../inc/core.h"
 
-void	symbols_before_cmd(t_c *p, char *ptr)
+void	symbols_before_cmd(t_c *p, char *r, int i)
 {
-	int		m;
 	char	*s;
+	int		m;
 
 	m = 0;
+	while ((r + 1) && !ft_strchr(" r%\t", *(r + ft_strlen(g_optab[i].c_name))))
+		r = ft_strstr(r + 1, g_optab[i].c_name);
 	s = ft_strchr(p->line, ':');
-	if (s && s < ptr && ++m)
-		while (s + m != ptr)
+	if (r && s && s < r && ++m)
+		while (s + m != r)
 		{
 			if (s[m] != ' ' && s[m] != '\t')
 			{
@@ -30,7 +32,7 @@ void	symbols_before_cmd(t_c *p, char *ptr)
 			m++;
 		}
 	else
-		while (p->line + m != ptr)
+		while (p->line + m != r)
 		{
 			if (p->line[m] != ' ' && p->line[m] != '\t')
 			{
@@ -83,7 +85,7 @@ int		check_point(t_c *p, int k, int c)
 
 void	read_command(t_c *p, int i, int k, t_cmd *cmd)
 {
-	symbols_before_cmd(p, ft_strstr(p->line, g_optab[i].c_name));
+	symbols_before_cmd(p, ft_strstr(p->line, g_optab[i].c_name), i);
 	if (!p->cmd_p)
 	{
 		cmd = (t_cmd *)malloc(sizeof(t_cmd));

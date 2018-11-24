@@ -88,7 +88,7 @@ int		is_str_label(t_c *p)
 			return (0);
 		i++;
 	}
-	return (1);
+	return (i);
 }
 
 void	start_label(t_c *p, int k)
@@ -99,7 +99,10 @@ void	start_label(t_c *p, int k)
 
 	i = 0;
 	if (!is_str_label(p))
+	{
+		ft_printf("%s\n", p->line);
 		error(9);
+	}
 	if (!p->tmp)
 	{
 		l = (t_label *)malloc(sizeof(t_label));
